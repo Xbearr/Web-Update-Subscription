@@ -1,9 +1,13 @@
 package com.data;
 import java.util.ArrayList;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
-
 import java.sql.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 
 public class updata_trigger {
 	private url url;
@@ -50,9 +54,45 @@ public class updata_trigger {
         else return 0;
 	}
 	
-	private int trigger(url url){
-		return 1;
+	public static String Get(String url){
+		String result = "";
+		BufferedReader in = null;
+		try{
+			URL realUrl = new URL(url);
+			URLConnection connection = realUrl.openConnection();
+			connection.connect();
+			in = new BufferedReader(new InputStreamReader(
+				     connection.getInputStream(),"UTF-8"));
+			String line;
+			while ((line = in.readLine()) != null) {
+				result += line;
+			}
+		}catch (Exception e){
+			System.out.println("发送GET请求出现异常！" + e);
+			e.printStackTrace();
+		}
+		finally {
+			try {
+			    if (in != null) {
+			     in.close();
+			    }
+			} catch (Exception e2) {
+			    e2.printStackTrace();
+			}
+	  }
+	  return result;
 	}
+	
+	private int trigger(url url){
+		String result=Get(url.getUrl());
+		mysimhash hash1=new mysimhash(result,64);
+		int dis = hash1.getDistance(hash1.strSimHash,url.getHash());
+		double score=1-1.0*dis/64;
+		if (score>url.getPercent()){
+			return 0;
+		}
+		else return 1;
+	}  
 	
 	public void spider_trigger(url url) {
 		

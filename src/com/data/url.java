@@ -9,6 +9,15 @@ public class url {
 	private String time;
 	private String username;
 	private String ID;
+	public int getPercent() {
+		return percent;
+	}
+
+	public void setPercent(int percent) {
+		this.percent = percent;
+	}
+
+	private int percent;
 	
 	public String getTime() {
 		return time;
