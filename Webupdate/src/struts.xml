@@ -21,6 +21,10 @@
 		<action name="viewurl" class="com.updater.action.ViewUrl" method="execute ">
 			<result name="success">/UrlManage.jsp</result>
 		</action>
+		<action name="viewuser" class="com.updater.action.ViewUser" method="execute ">
+			<result name="success">/UserDetail.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
 		<action name="deleteurl" class="com.updater.action.DeleteUrl" method="execute ">
 			<result name="success">/DeleteOrAddSuccess.jsp</result>
 			<result name="error">/Failed.jsp</result>
@@ -31,6 +35,18 @@
 		</action>
 		<action name="addurl" class="com.updater.action.AddUrl" method="execute ">
 			<result name="success">/DeleteOrAddSuccess.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="changeuserinf" class="com.updater.action.ChangeUserInf" method="execute ">
+			<result name="success">/UserDetail.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="changeurlinf" class="com.updater.action.ChangeUrlInf" method="execute ">
+			<result name="success">/UrlDetail.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="showurltochange" class="com.updater.action.UrlDetail" method="execute ">
+			<result name="success">/ChangeUrlInf.jsp</result>
 			<result name="error">/Failed.jsp</result>
 		</action>
 	</package> 

@@ -9,10 +9,14 @@
 </head>
 
 <header>
-<center>welcome! <s:property value="username"/></center>
-<center><a href="index.jsp" class="current">注销</a></center>
+<center>
+welcome! 
+<s:property value="username"/> 
+<a href='<s:url action="viewuser">
+<s:param name="username" value="username"/> 
+</s:url>'>个人信息 </a>
+<a href="index.jsp" class="current">注销</a></center>
 </header>
-
 
 <body>
 <center>
@@ -29,6 +33,9 @@
 						  </tr>
 						 </table>
 						 <center>
+						 		<a href='<s:url action="showurltochange">
+					<s:param name="id" value="#urls.id"/> 
+					</s:url>'>修改信息</a>
 						 		<a href='<s:url action="urldetail">
 			                     <s:param name="id" value="#urls.id"/> 
 			                     </s:url>'>详细信息</a>

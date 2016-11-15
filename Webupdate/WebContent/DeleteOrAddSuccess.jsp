@@ -6,9 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>操作成功</title>
 </head>
+
 <header>
-<center>welcome! <s:property value="username"/></center>
-<center><a href="index.jsp" class="current">注销</a></center>
+<center>
+welcome! 
+<s:property value="username"/> 
+<a href='<s:url action="viewuser">
+<s:param name="username" value="username"/> <br/>
+</s:url>'>个人信息 </a>
+<a href="index.jsp" class="current">注销</a></center>
 </header>
 
 <body style="background-image:url(bookof.jpg);background-position:center; background-repeat:repeat-y">
@@ -18,6 +24,10 @@
 								<a href='<s:url action="viewurl">
 			                     <s:param name="username" value="username"/> 
 			                     </s:url>'>查看url</a>
+			                     
+			                      <a href='<s:url action="returnindex">
+								<s:param name="username" value="username"/> 
+								</s:url>'>返回主页</a>
 </center>
 </body>
 </html>

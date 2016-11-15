@@ -10,8 +10,14 @@
 
 
 <header>
-<center>welcome! <s:property value="username"/></center>
-<center><a href="index.jsp" class="current">注销</a></center>
+<center>
+welcome! 
+<s:property value="username"/> 
+
+<a href='<s:url action="viewuser">
+<s:param name="username" value="username"/> 
+</s:url>'>个人信息 </a>
+<a href="index.jsp" class="current">注销</a></center>
 </header>
 
 <body  >

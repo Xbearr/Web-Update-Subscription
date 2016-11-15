@@ -197,6 +197,28 @@ public class getSQL {
 		    }
 		return false;
 	}
-	
+	public boolean DeleteUserByName(String name)
+	{
+		 con.ConnectDataBase();
+		 PreparedStatement state = null;
+		 int amount=0; 
+		 String SEARCH_SQL = "delete from user where username = ?";
+		try {
+			state = con.connect.prepareStatement(SEARCH_SQL);
+			state.setString(1, name);
+			amount = state.executeUpdate();
+			if(amount==1){
+				state.close();
+				return true;
+			}
+			else{
+				return  false;
+			}
+		    } //endof try
+		    catch (SQLException e) {
+			e.printStackTrace();
+		    }
+		return false;
+	}
 	
 }

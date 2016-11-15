@@ -7,5 +7,9 @@
 <title>Login Failed</title>
 </head>
 <body>
+<center>
+<a href="Login.jsp" class="current">登录</a>
+<a href="Register.jsp" class="current">注册</a>
+</center>
 </body>
 </html>

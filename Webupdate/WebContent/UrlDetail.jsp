@@ -8,10 +8,14 @@
 </head>
 
 <header>
-<center>welcome! <s:property value="username"/></center>
-<center><a href="index.jsp" class="current">注销</a></center>
+<center>
+welcome! 
+<s:property value="username"/> 
+<a href='<s:url action="viewuser">
+<s:param name="username" value="username"/> 
+</s:url>'>个人信息 </a>
+<a href="index.jsp" class="current">注销</a></center>
 </header>
-
 
 <body>
 <div id="Layer1" style="position:absolute; left:0px; top:0px;width:100%; height:100%; z-index:-1">    
@@ -46,6 +50,9 @@
 <br>
 <br>
 
+<a href="showurltochange?id=<s:property value="Uurl.id"/>&username=<s:property value="Uurl.username"/>">
+修改信息</a>
+						 		
 <a href='<s:url action="viewurl">
 <s:param name="username" value="username"/> 
 </s:url>'>查看url</a>

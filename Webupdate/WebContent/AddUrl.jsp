@@ -16,10 +16,10 @@
 String username=request.getParameter("username");
 out.print(username);
 %>
-</center>
-
-
-<center><a href="index.jsp" class="current">注销</a></center>
+<a href='<s:url action="viewuser">
+<s:param name="username" value="<%=username%>"/> 
+</s:url>'>个人信息 </a>
+<a href="index.jsp" class="current">注销</a></center>
 </header>
 
 
@@ -37,7 +37,12 @@ out.print(username);
 
 								 <a href='<s:url action="viewurl">
 			                     <s:param name="username" value="username"/> 
-			                     </s:url>'>查看url</a>
+			                     </s:url>'>放弃添加</a>
+			                     
+			      
+			                     <a href='<s:url action="returnindex">
+								<s:param name="username" value="username"/> 
+								</s:url>'>返回主页</a>
 
 </body>
 </html>
