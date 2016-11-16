@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+    "http://struts.apache.org/dtds/struts-2.0.dtd">  
+  
+<struts>  
+	<constant name="struts.date.format" value="YYYY-MM-dd"></constant>
+	<package name="webupdate" extends="struts-default">   
+	<default-action-ref name="defaultaction"/>
+		<action name="returnindex" class="com.updater.action.Return" method="execute ">
+			<result name="success">/UserIndex.jsp</result>
+		</action>
+		<action name="register" class="com.updater.action.Register" method="execute ">
+			<result name="success">/UserIndex.jsp</result>
+			<result name="error">/LoginFailed.jsp</result>
+		</action>
+		<action name="login" class="com.updater.action.Login" method="execute ">
+			<result name="success">/UserIndex.jsp</result>
+			<result name="error">/LoginFailed.jsp</result>
+		</action>
+		<action name="viewurl" class="com.updater.action.ViewUrl" method="execute ">
+			<result name="success">/UrlManage.jsp</result>
+		</action>
+		<action name="viewuser" class="com.updater.action.ViewUser" method="execute ">
+			<result name="success">/UserDetail.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="deleteurl" class="com.updater.action.DeleteUrl" method="execute ">
+			<result name="success">/DeleteOrAddSuccess.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="urldetail" class="com.updater.action.UrlDetail" method="execute ">
+			<result name="success">/UrlDetail.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="addurl" class="com.updater.action.AddUrl" method="execute ">
+			<result name="success">/DeleteOrAddSuccess.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="changeuserinf" class="com.updater.action.ChangeUserInf" method="execute ">
+			<result name="success">/UserDetail.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="changeurlinf" class="com.updater.action.ChangeUrlInf" method="execute ">
+			<result name="success">/UrlDetail.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+		<action name="showurltochange" class="com.updater.action.UrlDetail" method="execute ">
+			<result name="success">/ChangeUrlInf.jsp</result>
+			<result name="error">/Failed.jsp</result>
+		</action>
+	</package> 
+</struts>  
+
+					
