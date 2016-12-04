@@ -52,8 +52,9 @@ welcome!
         	</s:iterator>
 	<div class="cleaner_with_height">&nbsp;</div>
 	
-<a href='AddUrl.jsp?username=<s:property value="#urls.username"/>'>添加url</a>
-
+<a href='<s:url action="adddd">
+			                     <s:param name="username" value="username"/> 
+			                     </s:url>'>添加url</a>
 
 	
 <a href='<s:url action="returnindex">

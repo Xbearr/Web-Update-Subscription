@@ -45,7 +45,10 @@ welcome!
 <br>
 <br>
 
-<a href='ChangeUserInf.jsp?username=<s:property value="user.username"/>&email=<s:property value="user.email"/>'>修改信息</a>
+<a href='<s:url action="changeuser">
+<s:param name="username" value="username"/> 
+<s:param name="email" value="user.email"/> 
+</s:url>'>修改信息</a>
 
 <a href='<s:url action="returnindex">
 <s:param name="username" value="username"/> 

@@ -32,7 +32,7 @@ public class AddUrl extends ActionSupport{
 		Uurl.setInterval(getInterval());
 		Uurl.setPercent(getPercent());
 		Uurl.setTime(s_start_time);
-		Uurl.setId("0");
+		Uurl.setId(s_start_time);
 		String result=updata_trigger.Get(Uurl.getUrl());
 		mysimhash hash1=new mysimhash(result,64);
 		Uurl.setHash(hash1.strSimHash);

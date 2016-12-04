@@ -12,15 +12,9 @@
 <header>
 <center>welcome! 
 
+<s:property value="username"/> 
 
-<%
-String username=request.getParameter("username");
-String email=request.getParameter("email");
-
-out.print(username);
-%>
-
-<a href="viewuser.action?username=<%=username%>"> 个人信息 </a>
+<a href="viewuser.action?username=<s:property value="username"/> "> 个人信息 </a>
 
 
 <a href="index.jsp" class="current">注销</a></center>
@@ -31,10 +25,10 @@ out.print(username);
 
 <center>
 <form  action="changeuserinf" method="post">
-	用户名:<input type="text" name="username" value="<%=username%>" readonly="readonly"/> 
+	用户名:<input type="text" name="username" value="<s:property value="username"/> " readonly="readonly"/> 
 	old password: <input type="password" name="password"   placeholder="如不修改密码请留空"/> 
 	new password: <input type="password" name="newpassword"   placeholder="如不修改密码请留空"/> 
-	email: <input type="text" name="email"  value="<%=email%>"/> 
+	email: <input type="text" name="email"  value="<s:property value="email"/> "/> 
 	<input type="submit" value="修改"/>        		
 </form>
 

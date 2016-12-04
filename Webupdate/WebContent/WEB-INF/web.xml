@@ -3,7 +3,7 @@
   <display-name>Webupdate</display-name>
  
   <!-- LISTENER FOR THREAD -->  
-	<servlet>  
+  <servlet>  
 	    <servlet-name>InitListener</servlet-name>  
 	    <servlet-class>com.updater.service.InitListener</servlet-class>  
 	    <load-on-startup>2</load-on-startup><!-- 数字越小，启动的优先级越高，必须大于0 -->  

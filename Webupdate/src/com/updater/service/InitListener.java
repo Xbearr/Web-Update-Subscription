@@ -58,8 +58,10 @@ class MyThread1 extends Thread {
             getSQL down = new getSQL();
             Url url = new Url();
             url=down.GetUrlById("0");
+            
             updata_trigger up=new updata_trigger();
             try {
+            	if (url.equals(null)) continue;
 				up.spider_trigger(url);
 			} catch (Exception e) {
 				e.printStackTrace();

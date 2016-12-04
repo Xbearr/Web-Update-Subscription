@@ -21,12 +21,16 @@ public class ChangeUserInf extends ActionSupport{
 		getSQL down = new getSQL();
 		user=down.GetUserByName(getUsername());
 		user.setEmail(getEmail());
-		if ((getPassword().equals(null))){
-			
+		//System.out.println(user.getEmail());
+		//System.out.println(username);
+		if ((getNewpassword().equals(""))){
+			//System.out.println(username);
 			if(down.DeleteUserByName(username))
 			{	
+				//System.out.println(username);
 				if(down.newUser(user))
 				{	
+					//System.out.println(username);
 						return SUCCESS;
 				}
 				else 
@@ -41,10 +45,11 @@ public class ChangeUserInf extends ActionSupport{
 			
 		}else
 		{
+			//System.out.println(username);
 			if(user.getPassword().equals(getPassword()))
 			{	
 				user.setPassword(getNewpassword());
-				System.out.println(getNewpassword());
+				//System.out.println(getNewpassword());
 				if(down.DeleteUserByName(username))
 				{	
 					if(down.newUser(user))

@@ -11,13 +11,9 @@
 <header>
 <center>welcome! 
 
-
-<%
-String username=request.getParameter("username");
-out.print(username);
-%>
+<s:property value="username"/> 
 <a href='<s:url action="viewuser">
-<s:param name="username" value="<%=username%>"/> 
+<s:param name="username" value="username"/> 
 </s:url>'>个人信息 </a>
 <a href="index.jsp" class="current">注销</a></center>
 </header>
@@ -27,7 +23,7 @@ out.print(username);
 
 <center>
 <form  action="addurl" method="post">
-	用户名:<input type="text" name="username" value="<%=username%>" readonly="readonly"/> 
+	用户名:<input type="text" name="username" value="<s:property value="username"/> " readonly="readonly"/> 
 	url: <input type="text" name="url"/> 
 	更新间隔: <input type="text" name="interval" /> 
 	更新标准（%）: <input type="text" name="percent" /> 
