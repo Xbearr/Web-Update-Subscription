@@ -78,11 +78,11 @@ public class updata_trigger {
 		else return 1;
 	}  
 	
-	public void spider_trigger(Url url) throws Exception {
+	public void spider_trigger(Url url,String email) throws Exception {
 		
 		if ( difftime(url)==1) {
 			if(trigger(url)==1){
-				send_email.send_mail("ruansheproject@qq.com");
+				send_email.send_mail(email,url.getUrl());
 			}
 			else return;
 		}

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.updater.db.getSQL;
 import com.updater.model.Url;
+import com.updater.model.User;
 import com.updater.model.updata_trigger;  
   
 public class InitListener extends HttpServlet{  
@@ -57,12 +58,13 @@ class MyThread1 extends Thread {
              
             getSQL down = new getSQL();
             Url url = new Url();
+            User user=new User();
             url=down.GetUrlById("0");
             
             updata_trigger up=new updata_trigger();
             try {
             	if (url.equals(null)) continue;
-				up.spider_trigger(url);
+            	up.spider_trigger(url,user.getEmail());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
