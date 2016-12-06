@@ -1,142 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Webpage Updater</title>
-<meta name="description" content="">
-<meta name="author" content="">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/owl.theme.css">
-<link rel="stylesheet" href="css/owl.carousel.css">
-
-<!-- Main css -->
-<link rel="stylesheet" href="css/style.css">
-
-
-
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Welcome to Updater!</title>
+    <link type="text/css" rel="stylesheet" href="css/navigation.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
-<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-
-
-<!-- =========================
-     PRE LOADER       
-============================== -->
-<div  class="preloader">
-
-	<div class="sk-spinner sk-spinner-pulse"></div>
-
+<body >
+<div id="Layer1" style="position:absolute; left:0px; top:0px;width:100%; height:100%; z-index:-1">    
+<img src="images/bg.jpg" height="100%" width="100%"/>  
+</div>  
+<div class="ue-bar">
+    <div class="ue-bar-warp">
+        <div class="ue-bar-logo">
+            <a href="index.html">
+                <img src="images/logo1.png" width="120" >
+            </a>
+        </div>
+        <div class="ue-bar-nav">
+            <ul>
+                <li class="active"><a href="index.html">
+                    <em>首页</em>
+                </a></li>
+                <li><a href="Login.jsp">
+                    <em>个人资料管理</em>
+                </a></li>
+                <li><a href="Login.jsp">
+                    <em>URL管理</em>
+                </a></li>
+                <li><a href="#">
+                    <em>CONNECT US</em>
+                </a></li>
+            </ul>
+        </div>
+        <nav id="hd_nav">
+        <ul>
+           <!--
+            <li class="skin">
+                <a href="#">换肤
+                    <span class="ico"></span>
+                </a>
+            </li>
+            -->
+            <li class="login">
+                <img src="http://quc.qhimg.com/dm/20_20_80/t014987b2ab2e751b14.png" class="avatar">
+                <a class="a1" href="Login.jsp">
+                    登录
+                </a>
+                <a class="a2" href="Register.jsp">
+                    注册
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</div>
+<div class="banner-info">
+    <h2>Webpage Updater</h2>
+	 <p>We monitor webpages… so you don't have to!</p>
+	 <br/><br/><br/><br/>
+	 <a href="Login.jsp" class="button gray bigrounded">Let's Begin</a> 
 </div>
 
-
-<!-- =========================
-    NAVIGATION SECTION   
-============================== -->
-<div class="navbar navbar-default navbar-fixed-top sticky-navigation" role="navigation">
-	<div class="container">
-
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-			</button>
-			<a href="#" class="navbar-brand">Updater</a>
-		</div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right main-navigation">
-				<li><a href="#home" class="smoothScroll">Home</a></li>
-				<li><a href="#overview" class="smoothScroll">About</a></li>
-				<li><a href="Login.jsp" class="smoothScroll">登录</a></li>
-				<li><a href="Register.jsp" class="smoothScroll">注册</a></li>
-			</ul>
-		</div>
-        
-	</div>
-</div>
-
-
-<!-- =========================
-    HOME SECTION   
-============================== -->
-<section id="home" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-			<div class="col-md-offset-1 col-md-10 col-sm-12">
-				<h3 class="wow bounceIn" data-wow-delay="0.9s">Hello! you are welcome to</h3>
-				<h1 class="wow fadeInUp" data-wow-delay="1.6s">Webpage Updater</h1>
-				<a href="#overview" class="wow fadeInUp smoothScroll btn btn-default" data-wow-delay="2s">LEARN MORE</a>
-			</div>
-
-		</div>
-	</div>
-</section>
-
-
-<!-- =========================
-    OVERVIEW SECTION   
-============================== -->
-<section id="overview" class="parallax-section">
-	<div class="container">
-		<div class="row">
-
-			<div class="col-md-6 col-sm-12">
-				<img src="images/overview-img.jpg" class="img-responsive" alt="Overview">
-				<blockquote class="wow fadeInUp" data-wow-delay="1.9s">Webpage Updater 是一个帮助你获取网页更新消息的网站</blockquote>
-			</div>
-
-			<div class="col-md-1"></div>
-
-			<div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="1s">
-				<div class="overview-detail">
-					<h2>About Updater</h2>
-					<p>你只需告诉我们网站的地址，便可获得该网页的更新提醒，提醒可在线查看或发送至你的邮箱</p>
-					<a href="Login.jsp" class="btn btn-default smoothScroll">Let us begin</a>
-				</div>
-			</div>
-
-			<div class="col-md-1"></div>
-
-		</div>
-	</div>
-</section>
-
-
-
-<!-- =========================
-    FOOTER SECTION   
-============================== -->
-<footer>
-	<div class="container">
-		<div class="row">
-
-			<div class="clearfix"></div>
-
-			<div class="col-md-12 col-sm-12">
-				<p class="copyright-text">Copyright &copy; 2016 麻辣小龙虾</p>
-			</div>
-			
-		</div>
-	</div>
-</footer>
-
-<!-- =========================
-     SCRIPTS   
-============================== -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.parallax.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/jquery.backstretch.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/custom.js"></script>
 
 </body>
 </html>

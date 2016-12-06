@@ -1,0 +1,165 @@
+@CHARSET "UTF-8";
+
+*{
+    margin: 0; /* 外边距*/
+    padding: 0;	
+    font-family: "Lantinghei SC","Microsoft Yahei",瀹嬩綋,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+}
+
+li,ul,img,a,div{
+    border: 0;/* 边框*/
+    list-style: none;
+}
+
+div{
+	
+    display: block;	/* 块元素*/
+}
+
+a{
+    color: #333333;
+    text-decoration: none; /* 下划线*/
+    outline: none;
+}
+
+em{
+    font-weight: normal;
+}
+
+.ue-bar{
+	text-align: center;
+    background-color: #222222;
+}
+
+.ue-bar-warp{
+    width: 980px;
+    height: 70px;
+    margin: 0 auto; /* 外边距*/
+    overflow: hidden; /* */
+    position: relative; /* 相对布局*/
+}
+
+.ue-bar-logo{
+    width: 134px;
+    height: 50px;
+    float: left;
+    padding-right: 10px;
+    padding-top: 8px;
+}
+
+.ue-bar-logo a{
+    display: inline-block; /* 行内块元素*/
+    width: 100%;
+    height: 100%;
+    margin-top: 12px; 
+}
+
+.ue-bar-nav{
+    height: 70px;
+    float: left;
+}
+
+.ue-bar-nav li{
+    height: 70px;
+    float: left;
+    margin-right: 20px;
+}
+
+.ue-bar-nav li *{
+    
+    font-size: 14px;
+    display: inline-block;
+    line-height: 17px;
+    vertical-align: top; 
+}
+
+.ue-bar-nav li a{
+	color:#dadada;
+    height: 22px;
+    line-height: 22px;
+    padding: 26px 17px;
+}
+
+.ue-bar-nav li.active{
+    background: #333;
+}
+
+.ue-bar-nav li a:hover{
+	color:#00ffff;
+    background: #333;
+}
+
+
+
+
+#hd_nav{
+	padding-top: 25px;
+    float: right;
+}
+ul{
+    list-style: none;
+}
+
+#hd_nav li{
+   /* border-right: 1px solid rgba(255,255,255,0.2); 右侧边框*/
+    float: left;
+    height: 14px;
+    padding: 0 10px;
+}
+
+a{
+    text-decoration: none;
+    cursor: auto;
+}
+
+#hd_nav .skin a{
+    padding-left: 22px;
+    position: relative;
+}
+
+#hd_nav a{
+    color: #fff;
+    height: 14px;
+    line-height: 14px;
+}
+
+#hd_nav li .ico{
+    background: url("http://p7.qhimg.com/d/inn/774669ac/t01bc32feb0bbb5c4e0.png") no-repeat;
+    left: 0;
+    position: absolute;
+}
+
+#hd_nav .skin .ico{
+    background-position: 0 -270px;
+    height: 15px;
+    top: -1px;
+    width: 16px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.login{
+    padding-left: 41px;
+    position: relative;
+}
+
+.avatar{
+    border-radius: 18px;
+    box-shadow: 0 1px 5px rgba(87,87,87,0.5);
+    height: 20px;
+    left: 10px;
+    position: absolute;
+    top: -2px;
+    width: 20px;
+}
+.a1{
+    margin-left: 30px;
+}
+
+.a2{
+    margin-left: 5px;
+}
