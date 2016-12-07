@@ -7,7 +7,7 @@
     font-style: normal;
 }
 
-li,ul,img,a,div{
+li,ul,img,a,div,form{
     border: 0;/* 边框*/
     list-style: none;
 }
@@ -15,9 +15,11 @@ li,ul,img,a,div{
 div{
     display: block;	/* 块元素*/
 }
-
+form{
+    display: block;	/* 块元素*/
+}
 a{
-    color: #333333;
+    color: #ffffff;
     text-decoration: none; /* 下划线*/
     outline: none;
 }
@@ -26,6 +28,148 @@ em{
     font-weight: normal;
 }
 
+body
+{
+ background-image:url(../images/bg.jpg);
+ background-attachment:fixed;
+ background-repeat:no-repeat;
+}
+
+/* --------导航栏----------- */
+.ue-bar{
+    background-color: #222222;
+}
+
+.ue-bar-warp{
+    width: 980px;
+    height: 70px;
+    margin: 0 auto; /* 外边距*/
+    overflow: hidden; /* */
+    position: relative; /* 相对布局*/
+}
+
+.ue-bar-logo{
+    width: 134px;
+    height: 50px;
+    float: left;
+    padding-right: 10px;
+    padding-top: 8px;
+}
+
+.ue-bar-logo a{
+    display: inline-block; /* 行内块元素*/
+    width: 100%;
+    height: 100%;
+    margin-top: 12px; 
+}
+
+.ue-bar-nav{
+    height: 70px;
+    float: left;
+}
+
+.ue-bar-nav li{
+    height: 70px;
+    float: left;
+    margin-right: 20px;
+}
+
+.ue-bar-nav li *{
+    
+    font-size: 14px;
+    display: inline-block;
+    line-height: 17px;
+    vertical-align: top; 
+}
+
+.ue-bar-nav li a{
+	color:#dadada;
+    height: 22px;
+    line-height: 22px;
+    padding: 26px 17px;
+}
+
+.ue-bar-nav li.active{
+    background: #333;
+}
+
+.ue-bar-nav li a:hover{
+	color:#00ffff;
+    background: #333;
+}
+
+
+/* --------个人资料管理---------*/
+
+#hd_nav{
+	padding-top: 25px;
+    float: right;
+}
+ul{
+    list-style: none;
+}
+
+#hd_nav li{
+   /* border-right: 1px solid rgba(255,255,255,0.2); 右侧边框*/
+    float: left;
+    height: 14px;
+    padding: 0 10px;
+}
+
+a{
+    text-decoration: none;
+    cursor: auto;
+}
+
+#hd_nav .skin a{
+    padding-left: 22px;
+    position: relative;
+}
+
+#hd_nav a{
+    color: #fff;
+    height: 14px;
+    line-height: 14px;
+}
+
+#hd_nav li .ico{
+    background: url("http://p7.qhimg.com/d/inn/774669ac/t01bc32feb0bbb5c4e0.png") no-repeat;
+    left: 0;
+    position: absolute;
+}
+
+#hd_nav .skin .ico{
+    background-position: 0 -270px;
+    height: 15px;
+    top: -1px;
+    width: 16px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.login{
+    padding-left: 41px;
+    position: relative;
+}
+
+.avatar{
+    border-radius: 18px;
+    box-shadow: 0 1px 5px rgba(87,87,87,0.5);
+    height: 20px;
+    left: 10px;
+    position: absolute;
+    top: -2px;
+    width: 20px;
+}
+.a1{
+    margin-left: 30px;
+}
+
+.a2{
+    margin-left: 5px;
+}
 
 
 /*  ------- banner of index ------ */ 
@@ -43,8 +187,6 @@ em{
   margin: 1em 0;
   font-size: 1.8em;
 }
-
-
 .banner-info a
 {
 	
@@ -119,4 +261,64 @@ em{
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#575757', endColorstr='#888888');
 }
 
+/* ---------form------------
 
+
+.form{
+	margin: auto auto;
+  	margin-top: 10em;
+  	padding :15px; 
+  	width: 250px;
+	height: 300px;
+	background: hsla(0,0%,100%,.3);
+	border-radius: 10px;
+}
+
+.form center{
+	color: #ffffff;
+  font-size: 3.5em;
+}
+
+.form label{
+	float: right;
+	width: 80px;
+	line-height:25px;
+	margin-right:15px;
+} 
+
+.form label h2{
+	color: #ffffff;
+	font-size: 2.0em;
+	float:right;
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+.form input{
+	height: 23px;
+	float:right;
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+.form .button{
+	height: 43px;
+	width:100px;
+	margin-right:15px;
+}
+.form .text{
+	border-radius: 5px;
+	margin-right:15px;
+}
+.form a{
+	float: left;
+	width: 80px;
+	margin-top:15px;
+	margin-left:15px;
+	line-height:25px;
+	font-size: 1.1em;
+} 
+.form br{
+	clear: left;
+}
+*/
