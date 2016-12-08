@@ -1,0 +1,79 @@
+@CHARSET "UTF-8";
+
+body, td, button, input, textarea {
+    font-family: 'Foundry Sterling W01';
+    font-weight: 300;
+    font-style: Medium;
+}
+
+/*------------------help-mod*/
+.helpmod mod{
+	padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.helpmod .title {
+	text-align: center;
+    margin: 0 0 15px 0;
+    padding-bottom: 5px;
+    font-size: 24px;
+    letter-spacing: -1px;
+    border-bottom: 2px solid #eee;
+    line-height: 1em;
+    font-weight: normal;
+    color: #777;
+}
+
+.helpmod .title p {
+	font-size: 30px;
+    margin-bottom: 0;
+}
+
+.helpmod .body {
+    padding-bottom: 10px;
+    line-height: 1.5;
+    color: #777;
+}
+
+.helpmod .body p {
+	-webkit-margin-start: 25px;
+	-webkit-margin-end: 25px;
+	font-size: 18px;
+    margin-bottom: 0.4em;
+}
+
+.helpmod h1 {
+	text-align: center;
+    color: #ffffff;
+    line-height: 1em;
+    padding-bottom: 10px;
+    font-weight: 200;
+    margin: 50px 0;
+    font-size: 3.2em;
+}
+
+.helpmod p {
+    display: block;
+    /*-webkit-margin-before: 1em;*/
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+
+.helpmod-faq {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
