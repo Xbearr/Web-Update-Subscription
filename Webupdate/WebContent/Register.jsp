@@ -8,21 +8,19 @@
 	<link type="text/css" rel="stylesheet" href="css/login.css">
 <title>Register</title>
 </head>
-<body>
-<div id="Layer1" style="position:absolute; left:0px; top:0px;width:100%; height:100%; z-index:-1">    
-<img src="images/bg.jpg" height="100%" width="100%"/>  
-</div>  
+<body >
+
 <div class="ue-bar">
     <div class="ue-bar-warp">
         <div class="ue-bar-logo">
-            <a href="index.html">
-                <img src="images/logo1.png" width="120" >
+            <a href="index.jsp">
+                <img src="images/logo1.png" width="150" >
             </a>
         </div>
         <div class="ue-bar-nav">
             <ul>
-                <li class="active"><a href="index.html">
-                    <em>首页</em>
+                <li ><a href="index.jsp">
+                    <em>INDEX</em>
                 </a></li>
                 <li><a href="#">
                     <em>HELP</em>

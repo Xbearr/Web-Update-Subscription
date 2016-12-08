@@ -30,18 +30,21 @@ em{
 
 body
 {
- background-image:url(../images/bg.jpg);
+ background-image:url(../images/bg1.jpg);
  background-attachment:fixed;
  background-repeat:no-repeat;
 }
 
 /* --------导航栏----------- */
 .ue-bar{
-    background-color: #222222;
+  /* 
+   background-color: #3C3E4D;
+*/
+background: hsla(0,0%,100%,.05);
 }
 
 .ue-bar-warp{
-    width: 980px;
+    width: 1020px;
     height: 70px;
     margin: 0 auto; /* 外边距*/
     overflow: hidden; /* */
@@ -53,7 +56,7 @@ body
     height: 50px;
     float: left;
     padding-right: 10px;
-    padding-top: 8px;
+    padding-top: 2px;
 }
 
 .ue-bar-logo a{
@@ -66,6 +69,7 @@ body
 .ue-bar-nav{
     height: 70px;
     float: left;
+    margin-left: 30px;
 }
 
 .ue-bar-nav li{
@@ -83,21 +87,23 @@ body
 }
 
 .ue-bar-nav li a{
-	color:#dadada;
+	color:#c4c4c4;
     height: 22px;
     line-height: 22px;
     padding: 26px 17px;
 }
 
 .ue-bar-nav li.active{
-    background: #333;
+    background: hsla(0,0%,100%,.1);
 }
 
 .ue-bar-nav li a:hover{
-	color:#00ffff;
-    background: #333;
+	color:#ffffff;
+    background: hsla(0,0%,100%,.1);
 }
-
+.ue-bar-nav li a.active{
+   color:#ffffff;
+}
 
 /* --------个人资料管理---------*/
 
@@ -177,6 +183,10 @@ a:hover{
   text-align: center;
   margin-top: 14em;
   
+}
+.banner-info .time {
+  color: #ffffff;
+  font-size: 2.0em;
 }
 .banner-info h2 {
   color: #ffffff;
