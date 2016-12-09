@@ -1,7 +1,10 @@
 package com.updater.action;
 
+import java.util.ArrayList;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.updater.db.getSQL;
+import com.updater.model.Url;
 
 public class DeleteUrl extends ActionSupport{
 
@@ -9,6 +12,16 @@ public class DeleteUrl extends ActionSupport{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	public ArrayList<Url> Uurl;
+	
+	public ArrayList<Url> getUurl() {
+		return Uurl;
+	}
+	public void setUurl(ArrayList<Url> Uurl) {
+		this.Uurl = Uurl;
+	}
+	
 	public String id;
 	public String username;
 	public String execute()
@@ -19,6 +32,7 @@ public class DeleteUrl extends ActionSupport{
 			if(down.DeleteUrl(getId()))
 			{
 					//System.out.println(user.getUsername());
+					setUurl(down.GetUrlByName(username));
 					return SUCCESS;
 			}
 			else 

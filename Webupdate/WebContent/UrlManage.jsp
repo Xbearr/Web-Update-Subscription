@@ -5,53 +5,62 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" rel="stylesheet" href="css/style.css">
 <title>Manage Your Url</title>
 </head>
-
-<header>
-<center>
-welcome! 
-<s:property value="username"/> 
-<a href='<s:url action="viewuser">
-<s:param name="username" value="username"/> 
-</s:url>'>个人信息 </a>
-<a href="index.jsp" class="current">注销</a></center>
-</header>
-
 <body>
-<center>
-		<s:iterator value="Uurl" id="urls" status="ss">
-	        	
-	        	<div class="templatemo_product_box">
-	            	
-	                <div class="product_info">
-	                	
-	                	<table border="0">
-						  <tr>
-						  	<th>url:</th>
-						  	<th><s:property value="#urls.url"/></th>
-						  </tr>
-						 </table>
-						 <center>
-						 		<a href='<s:url action="showurltochange">
-					<s:param name="id" value="#urls.id"/> 
-					</s:url>'>修改信息</a>
-						 		<a href='<s:url action="urldetail">
-			                     <s:param name="id" value="#urls.id"/> 
-			                     </s:url>'>详细信息</a>
-						    	<a href='<s:url action="deleteurl">
-			                     <s:param name="id" value="#urls.id"/> 
-			                     </s:url>'>删除</a>
-						</center>
-	                	<br/>
-	                	<br/>
-	                </div>
-	                <div class="cleaner">&nbsp;</div>
-	            </div>
+<div class="ue-bar">
+    <div class="ue-bar-warp">
+        <div class="ue-bar-logo">
+            <a href='<s:url action="returnindex">
+					<s:param name="username" value="username"/> 
+						</s:url>'>
+                <img src="images/logo1.png" width="150" >
+            </a>
+        </div>
+        <div class="ue-bar-nav">
+            <ul>
+                <li><a href='<s:url action="returnindex">
+					<s:param name="username" value="username"/> 
+						</s:url>'>
+                    <em>INDEX</em>
+                </a></li>
+                <li class="active"><a class="active" href='<s:url action="returnindex">
+						<s:param name="username" value="username"/> 
+							</s:url>'>
+                    <em>URLS</em>
+                </a></li>
+                <li><a href="#">
+                    <em>HELP</em>
+                </a></li>
+                <li><a href="#">
+                    <em>CONNECT US</em>
+                </a></li>
+            </ul>
+        </div>
+        <nav id="hd_nav">
+        <ul>
+           <!--
+            <li class="skin">
+                <a href="#">æ¢è¤
+                    <span class="ico"></span>
+                </a>
+            </li>
+            -->
+            <li class="login">
+                <img src="http://quc.qhimg.com/dm/20_20_80/t014987b2ab2e751b14.png" class="avatar">
+           		<a class="a1" href='<s:url action="viewuser">
+				<s:param name="username" value="username"/> 
+				</s:url>'><s:property value="username"/>  </a>
+				<a class="a2" href="index.jsp" class="current">注销</a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</div>
 
-        	</s:iterator>
-	<div class="cleaner_with_height">&nbsp;</div>
-	
+
+<center>
 <a href='<s:url action="adddd">
 			                     <s:param name="username" value="username"/> 
 			                     </s:url>'>添加url</a>
@@ -62,5 +71,86 @@ welcome!
 </s:url>'>返回主页</a>
 
 </center>
+
+<div id="container">
+
+<!-- Start Tabs !-->
+
+<div class="tab-container">
+
+<!-- Use c + the tab number or any other identifier you'd like when creating a new tab, just keep them in order.  You can have an unlimited number of tabs !-->
+<s:iterator value="Uurl" id="urls" status="ss">
+	<div id="c2">
+			<div class="tab-content"> <!-- tab-container > div > div in the CSS !-->
+				<form  action="changeurlinf" method="post">
+					用户名:<input type="text" name="username" value="<s:property value="#urls.username"/>" readonly="readonly"/> 
+					id:<input type="text" name="id" value="<s:property value="#urls.id"/>" readonly="readonly"/> 
+					url: <input type="text" name="url" value="<s:property value="#urls.url"/>" /> 
+					更新间隔: <input type="text" name="interval"  value="<s:property value="#urls.interval"/>" /> 
+					更新标准（%）: <input type="text" name="percent" value="<s:property value="#urls.percent"/>" /> 
+					<input type="submit" value="修改"/>        		
+				</form>
+            </div>
+	</div>
+	<div id="<s:property value="#urls.id"/>">
+		<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.id"/></a> <!-- This is your actual tab and the content is below it !-->
+			<div class="tab-content">  <!-- tab-container > div > div in the CSS !-->
+						<table border="0">
+						  	<tr>
+							    <th scope="row">Id:</th>
+							    <td><B><s:property value="#urls.id"/></B></td>
+							  </tr>
+							  <tr>
+							    <th scope="row">Url:</th>
+							    <td><B><s:property value="#urls.url"/></B></td>
+							  </tr>
+							  <tr>
+							    <th scope="row">间隔:</th>
+							    <td><B><s:property value="#urls.interval"/></B></td>
+							  </tr>
+							  <tr>
+							    <th scope="row">百分比:</th>
+							    <td><B><s:property value="#urls.percent"/></B></td>
+							  </tr>
+							  <tr>
+							    <th scope="row">最近更新时间:</th>
+							    <td><B><s:property value="#urls.time"/></B></td>
+							  </tr>
+						 </table>
+						 <center>
+						 		<a href='#c2'>修改信息</a>
+						    	<a href='<s:url action="deleteurl">
+			                     <s:param name="id" value="#urls.id"/> 
+			                     </s:url>'>删除</a>
+						</center>
+	                	<br/>
+	                	<br/>
+				
+             </div>
+	</div>
+</s:iterator>
+<div id="c1">
+		<a href="#c1" title="First">ADDURL</a> <!-- This is your actual tab and the content is below it !-->
+			<div class="tab-content">  <!-- tab-container > div > div in the CSS !-->
+			<form  action="addurl" method="post">
+				用户名:<input type="text" name="username" value="<s:property value="username"/> " readonly="readonly"/> 
+				url: <input type="text" name="url"/> 
+				更新间隔: <input type="text" name="interval" /> 
+				更新标准（%）: <input type="text" name="percent" /> 
+				<input type="submit" value="添加"/>        		
+			</form>
+             </div>
+	</div>
+<div id="c0">
+			<div class="tab-content"> <!-- Having a hidden or opening tab is ideal when you don't want last tab to always show first when loading the page !-->
+            <h3>urls</h3>
+            </div>
+	</div>
+</div><!-- Tab Container !-->
+
+
+</div><!-- Container !-->
+
+
 </body>
 </html>

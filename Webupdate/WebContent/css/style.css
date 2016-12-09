@@ -332,3 +332,96 @@ a:hover{
 	clear: left;
 }
 */
+.tab-container h3{ /* Effects only the h3 headings inside the tabs */
+	font-size:147%;
+	color:#0000ff;
+}
+/* `Containers
+----------------------------------------------------------------------------------------------------*/
+
+#container{ /* Use this to position the entire tab module */
+	margin:auto auto; 
+	width:1000px; 
+	margin-top:4%;
+}
+
+.tab-container {
+	position: relative; /* It's important to keep this position relative and the absolute positions in this file the same */
+	width: 100%; 
+	z-index:0;
+}
+
+/* `Common Styles
+----------------------------------------------------------------------------------------------------*/
+
+/* Tabs */
+
+.tab-container > div { 
+	display: inline; 
+}
+
+.tab-container > div > a {
+	width: 360px;
+	height: 50px;
+	position: relative !important; /* Keeps the tabs in line with each other */
+	text-decoration: none; 
+	color: #808080; 
+	display: block;
+	font-size:15px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+	margin:4px;
+	background: #f9f9f9;
+	border: 1px solid #c4c6ca;
+	padding: 4px 14px;
+	border-radius: 5px;
+    text-shadow: 0 -1px 0 #000000;
+	box-shadow: 0 4px 10px -5px #000000;
+}
+
+.tab-container > div:not(:target) > a {
+}	
+
+.tab-container > div:target > a { 
+    background: none repeat scroll 0 0 #B1DFEC;
+    text-shadow: 0 1px 0 #4C4648;
+}	
+
+.tab-container > div > div { /* This is the container which holds the tab content */
+	background: #f9f9f9;
+	border: 1px solid #c4c6ca;
+	padding: 4px 14px;
+	border-radius: 5px;
+    text-shadow: 0 -1px 0 #000000;
+	box-shadow: 0 4px 10px -5px #000000;
+	z-index: -2;
+	top: 0px;
+	left: 400px;
+	right: 0px;
+	padding: 20px;
+	min-height:250px; /* Change this value if you need more or less content space */
+	position:absolute; /* Fixes IE 7 & 8 */
+}	
+.tab-container > div:not(:target) > div { 
+	position: absolute; /* This keeps the tab module contained */
+}
+
+.tab-container > div:target > div { 
+	position: absolute; 
+	z-index: 3 !important; /* Brings the content to the front depending on the tab that was clicked */ 
+}
+
+div.tab-content{ /* Styles the inner content of the tabs */
+	float:right;
+	padding-bottom: 70px;
+    padding-left: 20px;
+    padding-right: 20px; 
+}
+	
+.tab-content img{ 
+	margin:0 auto; 
+	display:block; 
+	padding-bottom: 20px;
+    padding-top: 10px;
+}

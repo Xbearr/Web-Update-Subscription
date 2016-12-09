@@ -107,6 +107,9 @@ public class getSQL {
 				urlinsql.setId(res.getString("id"));
 				urlinsql.setUrl(res.getString("url"));
 				urlinsql.setUsername(res.getString("username"));
+				urlinsql.setInterval(res.getString("jiange"));
+				urlinsql.setTime(res.getString("time"));
+				urlinsql.setPercent(res.getInt("percent"));
 				//System.out.println(urlinsql.getUrl());
 				urllist.add(urlinsql);
 			}
