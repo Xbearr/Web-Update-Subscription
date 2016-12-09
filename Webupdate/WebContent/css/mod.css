@@ -66,6 +66,12 @@ body, td, button, input, textarea {
     -webkit-margin-end: 0px;
 }
 
+.helpmod a {
+	font-size: 18px;
+    color: brown;
+    text-decoration: none;
+    outline: none;
+}
 
 .helpmod-faq {
     padding: 20px;

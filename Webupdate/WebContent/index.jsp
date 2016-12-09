@@ -32,8 +32,8 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
                 <li><a href="Help.jsp">
                     <em>HELP</em>
                 </a></li>
-                <li><a href="#">
-                    <em>CONNECT US</em>
+                <li><a href="contact.jsp">
+                    <em>Contact US</em>
                 </a></li>
             </ul>
         </div>
