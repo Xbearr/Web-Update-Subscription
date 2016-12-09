@@ -1,6 +1,7 @@
 package com.updater.action;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -15,26 +16,35 @@ public class ChangeUrlInf extends ActionSupport{
 	private String interval;
 	private String time;
 	private int percent;
-	public Url Uurl= new Url();
+	public Url Uurls= new Url();
 	
+	public ArrayList<Url> Uurl;
+
+	public ArrayList<Url> getUurl() {
+		return Uurl;
+	}
+	public void setUurl(ArrayList<Url> Uurl) {
+		this.Uurl = Uurl;
+	}
 	
 	public String execute()
 	{
 		Date start_time = new Date();
         SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");//设置日期格式
         String s_start_time = df.format(start_time);
-		Uurl.setUrl(getUrl());
-		Uurl.setUsername(getUsername());
-		Uurl.setInterval(getInterval());
-		Uurl.setPercent(getPercent());
-		Uurl.setTime(s_start_time);
-		Uurl.setId(s_start_time);
+		Uurls.setUrl(getUrl());
+		Uurls.setUsername(getUsername());
+		Uurls.setInterval(getInterval());
+		Uurls.setPercent(getPercent());
+		Uurls.setTime(s_start_time);
+		Uurls.setId(getId());
 		getSQL down = new getSQL();
 		
 		if(down.DeleteUrl(getId()))
 		{	
-			if(down.newUrl(Uurl))
+			if(down.newUrl(Uurls))
 			{	
+					setUurl(down.GetUrlByName(getUsername()));
 					return SUCCESS;
 			}
 			else 

@@ -25,7 +25,9 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
 <div class="ue-bar">
     <div class="ue-bar-warp">
         <div class="ue-bar-logo">
-            <a href="index.jsp">
+            <a href='<s:url action="returnindex">
+				<s:param name="username" value="username"/> 
+					</s:url>'>
                 <img src="images/logo1.png" width="150" >
             </a>
         </div>

@@ -8,8 +8,7 @@
 	<link type="text/css" rel="stylesheet" href="css/login.css">
 <title>Login</title>
 </head>
-<body>
-</div>  
+<body> 
 <div class="ue-bar">
     <div class="ue-bar-warp">
         <div class="ue-bar-logo">
