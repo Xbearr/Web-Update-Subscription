@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <head lang="en">
@@ -26,8 +25,8 @@
 	                <li class="active"><a class="active" href="Help.jsp">
 	                    <em>HELP</em>
 	                </a></li>
-	                <li><a href="#">
-	                    <em>CONNECT US</em>
+	                <li><a href="contact.jsp">
+	                    <em>Contact US</em>
 	                </a></li>
 	            </ul>
 	        </div>
