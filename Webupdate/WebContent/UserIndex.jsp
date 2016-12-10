@@ -34,8 +34,8 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
         <div class="ue-bar-nav">
             <ul>
                 <li class="active"><a class="active" href='<s:url action="returnindex">
-<s:param name="username" value="username"/> 
-</s:url>'>
+					<s:param name="username" value="username"/> 
+					</s:url>'>
                     <em>INDEX</em>
                 </a></li>
                 <li><a href='<s:url action="viewurl">

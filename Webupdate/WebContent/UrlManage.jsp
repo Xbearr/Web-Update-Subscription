@@ -33,8 +33,10 @@
                 <li><a href="#">
                     <em>HELP</em>
                 </a></li>
-                <li><a href="#">
-                    <em>CONNECT US</em>
+                <li><a href='<s:url action="returncontact">
+						<s:param name="username" value="username"/> 
+							</s:url>'>
+                    <em>Contact US</em>
                 </a></li>
             </ul>
         </div>
@@ -84,9 +86,21 @@
     </div>
 	<s:iterator value="Uurl" id="urls" status="ss">
 		<s:if test='#urls.active==1'>
-		<div id="<s:property value="#urls.id"/>">
-			<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.id"/></a> <!-- This is your actual tab and the content is below it !-->
-				<div class="tab-content">  <!-- tab-container > div > div in the CSS !-->
+		<div id="c2">
+			<div class="tab-content"> <!-- tab-container > div > div in the CSS !-->
+				<form  action="changeurlinf" method="post">
+					用户名:<input type="text" name="username" value="<s:property value="#urls.username"/>" readonly="readonly"/> 
+					id:<input type="text" name="id" value="<s:property value="#urls.id"/>" readonly="readonly"/> 
+					url: <input type="text" name="url" value="<s:property value="#urls.url"/>" /> 
+					更新间隔: <input type="text" name="interval"  value="<s:property value="#urls.interval"/>" /> 
+					更新标准（%）: <input type="text" name="percent" value="<s:property value="#urls.percent"/>" /> 
+					<input type="submit" value="修改"/>        		
+				</form>
+            </div>
+	</div>
+	<div id="<s:property value="#urls.id"/>">
+		<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.id"/></a> <!-- This is your actual tab and the content is below it !-->
+			<div class="tab-content">  <!-- tab-container > div > div in the CSS !-->
 						<table border="0">
 						  	<tr>
 							    <th scope="row">Id:</th>
@@ -96,16 +110,11 @@
 							    <th scope="row">Url:</th>
 							    <td><B><s:property value="#urls.url"/></B></td>
 							  </tr>
-							  <tr>
-							  <s:if test='#urls.active==0'>
+							  <s:if test='#urls.active==1'>
 							  <tr><input type="button" value="Active!">
 							    <th scope="row">active:</th>
 							    <td><B><s:property value="#urls.active"/></B></td>
 							  </tr></s:if>
-							  <tr>
-							    <th scope="row">active:</th>
-							    <td><B><s:property value="#urls.active"/></B></td>
-							  </tr>
 							  <tr>
 							    <th scope="row">间隔:</th>
 							    <td><B><s:property value="#urls.interval"/></B></td>
@@ -130,17 +139,18 @@
 				
              </div>
 		</div>
-	</s:if>
+		</s:if>
 	</s:iterator>
 
 	<div class="title">
-		<p>Active Jobs</p>
+		<p>Inactive Jobs</p>
     </div>
 	<s:iterator value="Uurl" id="urls" status="ss">
 		<s:if test='#urls.active==0'>
 		<div id="<s:property value="#urls.id"/>">
 			<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.id"/></a> <!-- This is your actual tab and the content is below it !-->
 				<div class="tab-content">  <!-- tab-container > div > div in the CSS !-->
+					
 						<table border="0">
 						  	<tr>
 							    <th scope="row">Id:</th>
@@ -151,7 +161,7 @@
 							    <td><B><s:property value="#urls.url"/></B></td>
 							  </tr>
 							  <tr>
-							  <s:if test='#urls.active==0'>
+							  <s:if test='#urls.active==1'>
 							  <tr><input type="button" value="Active!">
 							    <th scope="row">active:</th>
 							    <td><B><s:property value="#urls.active"/></B></td>
@@ -201,7 +211,7 @@
 	</div>
 <div id="c0">
 			<div class="tab-content"> <!-- Having a hidden or opening tab is ideal when you don't want last tab to always show first when loading the page !-->
-            <h3>urls</h3>
+            <h3>98765</h3>
             </div>
 	</div>
 </div><!-- Tab Container !-->
