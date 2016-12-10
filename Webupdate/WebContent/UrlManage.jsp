@@ -20,6 +20,7 @@
         </div>
         <div class="ue-bar-nav">
             <ul>
+<<<<<<< HEAD
                 <li><a href='<s:url action="returnindex">
 					<s:param name="username" value="username"/> 
 						</s:url>'>
@@ -39,6 +40,29 @@
                     <em>Contact US</em>
                 </a></li>
             </ul>
+=======
+	                <li><a href='<s:url action="returnindex">
+						<s:param name="username" value="username"/> 
+						</s:url>'>
+                    <em>INDEX</em>
+               		</a></li>
+               		<li class="active"><a class="active" href='<s:url action="viewurl">
+			        	<s:param name="username" value="username"/> 
+			            </s:url>'>
+                    <em>URLS</em>
+                	</a></li>
+                	<li><a href='<s:url action="returnhelp">
+						<s:param name="username" value="username"/> 
+						</s:url>'>
+	                    <em>HELP</em>
+	                </a></li>
+					<li><a href='<s:url action="returncontact">
+						<s:param name="username" value="username"/> 
+						</s:url>'>
+	                    <em>Contact US</em>
+	                </a></li>
+	            </ul>
+>>>>>>> 1140310317
         </div>
         <nav id="hd_nav">
         <ul>

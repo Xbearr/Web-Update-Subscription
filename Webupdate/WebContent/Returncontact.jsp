@@ -31,6 +31,7 @@
 			            </s:url>'>
                     <em>URLS</em>
                 	</a></li>
+<<<<<<< HEAD
 	                <li><a href="Help.jsp">
 	                    <em>HELP</em>
 	                </a></li>
@@ -39,10 +40,23 @@
 							</s:url>'>
                     <em>Contact US</em>
                 </a></li>
+=======
+	                <li><a href='<s:url action="returnhelp">
+						<s:param name="username" value="username"/> 
+						</s:url>'>
+	            	<em>HELP</em>
+	            	</a></li>
+	                <li class="active"><a class="active" href='<s:url action="returncontact">
+	                	<s:param name="username" value="username"/> 
+						</s:url>'>
+	                <em>Contact US</em>
+	                </a></li>
+>>>>>>> 1140310317
 	            </ul>
 	        </div>
 	        
 	        <nav id="hd_nav">
+<<<<<<< HEAD
         <ul>
            <!--
             <li class="skin">
@@ -60,6 +74,25 @@
             </li>
         </ul>
     </nav>
+=======
+	        <ul>
+	           <!--
+	            <li class="skin">
+	                <a href="#">æ¢è¤
+	                    <span class="ico"></span>
+	                </a>
+	            </li>
+	            -->
+	            <li class="login">
+	                <img src="http://quc.qhimg.com/dm/20_20_80/t014987b2ab2e751b14.png" class="avatar">
+	           		<a class="a1" href='<s:url action="viewuser">
+					<s:param name="username" value="username"/> 
+					</s:url>'><s:property value="username"/>  </a>
+					<a class="a2" href="index.jsp" class="current">注销</a>
+	            </li>
+	        </ul>
+    		</nav>
+>>>>>>> 1140310317
 	    </div>
     </div>
     
