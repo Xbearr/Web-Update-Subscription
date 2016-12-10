@@ -40,7 +40,7 @@ public class getSQL {
 		 con.ConnectDataBase();
 		 PreparedStatement state = null;
 		 int amount=0; 
-		 String INSERT_SQL = "insert into url(id,url,username,jiange,hash,time,percent) values('"+nurl.getId()+"','"+nurl.getUrl()+"','"+nurl.getUsername()+"','"+nurl.getInterval()+"','"+null+"','"+nurl.getTime()+"','"+nurl.getPercent()+"')";
+		 String INSERT_SQL = "insert into url(active,id,url,username,jiange,hash,time,percent) values('"+nurl.getActive()+"','"+nurl.getId()+"','"+nurl.getUrl()+"','"+nurl.getUsername()+"','"+nurl.getInterval()+"','"+null+"','"+nurl.getTime()+"','"+nurl.getPercent()+"')";
 		 try {
 			state = con.connect.prepareStatement(INSERT_SQL);
 			amount = state.executeUpdate();
@@ -110,6 +110,7 @@ public class getSQL {
 				urlinsql.setInterval(res.getString("jiange"));
 				urlinsql.setTime(res.getString("time"));
 				urlinsql.setPercent(res.getInt("percent"));
+				urlinsql.setActive(res.getInt("active"));
 				//System.out.println(urlinsql.getUrl());
 				urllist.add(urlinsql);
 			}
@@ -140,6 +141,7 @@ public class getSQL {
 				urlinsql.setInterval(res.getString("jiange"));
 				urlinsql.setTime(res.getString("time"));
 				urlinsql.setPercent(res.getInt("percent"));
+				urlinsql.setActive(res.getInt("active"));
 				//System.out.println(urlinsql.getUrl());
 			}
 			state.close();

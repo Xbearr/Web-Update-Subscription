@@ -51,6 +51,7 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
                 </a></li>
             </ul>
         </div>
+        
         <nav id="hd_nav">
         <ul>
            <!--
@@ -68,7 +69,8 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
 				<a class="a2" href="index.jsp" class="current">注销</a>
             </li>
         </ul>
-    </nav>
+    	</nav>
+    	
     </div>
 </div>
 
@@ -81,7 +83,6 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
 	 <a class="button gray bigrounded" href='<s:url action="viewurl">
 			                     <s:param name="username" value="username"/> 
 			                     </s:url>'>Let's Begin</a>
-	 
 </div>
 </body>
 

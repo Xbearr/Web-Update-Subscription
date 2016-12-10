@@ -16,6 +16,7 @@ public class ChangeUrlInf extends ActionSupport{
 	private String interval;
 	private String time;
 	private int percent;
+	private int active;
 	public Url Uurls= new Url();
 	
 	public ArrayList<Url> Uurl;
@@ -38,6 +39,7 @@ public class ChangeUrlInf extends ActionSupport{
 		Uurls.setPercent(getPercent());
 		Uurls.setTime(s_start_time);
 		Uurls.setId(getId());
+		Uurls.setActive(getActive());
 		getSQL down = new getSQL();
 		
 		if(down.DeleteUrl(getId()))
@@ -90,12 +92,17 @@ public class ChangeUrlInf extends ActionSupport{
 		return percent;
 	}
 
-
-
 	public void setPercent(int percent) {
 		this.percent = percent;
 	}
 
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
+	}
 
 
 	public String getInterval() {

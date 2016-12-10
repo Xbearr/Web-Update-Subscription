@@ -359,7 +359,24 @@ a:hover{
 .tab-container > div { 
 	display: inline; 
 }
+.tab-container .title {
+    margin: 0 0 15px 0;
+    padding-bottom: 5px;
+    font-size: 24px;
+    letter-spacing: -1px;
+    border-bottom: 2px solid #eee;
+    line-height: 1em;
+    font-weight: normal;
+    color: #191616;
+}
 
+.tab-container .title p {
+	-webkit-margin-start: 5px;
+	-webkit-margin-after: 0em;
+	height: 32px;
+	font-size: 30px;
+    margin-bottom: 0;
+}
 .tab-container > div > a {
 	width: 360px;
 	height: 50px;
@@ -396,7 +413,7 @@ a:hover{
     text-shadow: 0 -1px 0 #000000;
 	box-shadow: 0 4px 10px -5px #000000;
 	z-index: -2;
-	top: 0px;
+	top: 3em;
 	left: 400px;
 	right: 0px;
 	padding: 20px;

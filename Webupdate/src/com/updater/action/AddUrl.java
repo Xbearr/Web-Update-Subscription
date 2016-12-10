@@ -21,6 +21,8 @@ public class AddUrl extends ActionSupport{
 	private String time;
 	private int percent;
 	private String hash;
+	private int active;
+	
 	public Url Uurls= new Url();
 	
 	public ArrayList<Url> Uurl;
@@ -38,6 +40,7 @@ public class AddUrl extends ActionSupport{
 		Date start_time = new Date();
         SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");//设置日期格式
         String s_start_time = df.format(start_time);
+        Uurls.setActive(getActive());
 		Uurls.setUrl(getUrl());
 		Uurls.setUsername(getUsername());
 		Uurls.setInterval(getInterval());
@@ -116,5 +119,11 @@ public class AddUrl extends ActionSupport{
 
 	public void setHash(String hash) {
 		this.hash = hash;
+	}
+	public int getActive() {
+		return active;
+	}
+	public void setActive(int active) {
+		this.active = active;
 	}
 }
