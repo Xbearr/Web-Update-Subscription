@@ -25,30 +25,37 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
 <div class="ue-bar">
     <div class="ue-bar-warp">
         <div class="ue-bar-logo">
-            <a href="index.jsp">
+            <a href='<s:url action="returnindex">
+				<s:param name="username" value="username"/> 
+					</s:url>'>
                 <img src="images/logo1.png" width="150" >
             </a>
         </div>
         <div class="ue-bar-nav">
             <ul>
-                <li class="active"><a class="active" href='<s:url action="returnindex">
-<s:param name="username" value="username"/> 
-</s:url>'>
-                    <em>INDEX</em>
+	        	<li class="active"><a class="active" href='<s:url action="returnindex">
+					<s:param name="username" value="username"/> 
+					</s:url>'>
+                <em>INDEX</em>
+               	</a></li>
+               	<li><a href='<s:url action="viewurl">
+			      	<s:param name="username" value="username"/> 
+			        </s:url>'>
+                <em>URLS</em>
                 </a></li>
-                <li><a href='<s:url action="viewurl">
-			                     <s:param name="username" value="username"/> 
-			                     </s:url>'>
-                    <em>URLS</em>
-                </a></li>
-                <li><a href="#">
-                    <em>HELP</em>
-                </a></li>
-                <li><a href="#">
-                    <em>CONNECT US</em>
-                </a></li>
-            </ul>
+                <li><a href='<s:url action="returnhelp">
+					<s:param name="username" value="username"/> 
+					</s:url>'>
+	            <em>HELP</em>
+	            </a></li>
+				<li><a href='<s:url action="returncontact">
+					<s:param name="username" value="username"/> 
+					</s:url>'>
+	            <em>Contact US</em>
+	            </a></li>
+	     	</ul>
         </div>
+        
         <nav id="hd_nav">
         <ul>
            <!--
@@ -66,7 +73,8 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
 				<a class="a2" href="index.jsp" class="current">注销</a>
             </li>
         </ul>
-    </nav>
+    	</nav>
+    	
     </div>
 </div>
 
@@ -79,7 +87,6 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
 	 <a class="button gray bigrounded" href='<s:url action="viewurl">
 			                     <s:param name="username" value="username"/> 
 			                     </s:url>'>Let's Begin</a>
-	 
 </div>
 </body>
 

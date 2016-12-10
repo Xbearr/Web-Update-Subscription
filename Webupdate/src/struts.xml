@@ -10,6 +10,12 @@
 		<action name="returnindex" class="com.updater.action.Return" method="execute ">
 			<result name="success">/UserIndex.jsp</result>
 		</action>
+		<action name="returncontact" class="com.updater.action.Return" method="execute ">
+			<result name="success">/Returncontact.jsp</result>
+		</action>
+		<action name="returnhelp" class="com.updater.action.Return" method="execute ">
+			<result name="success">/Returnhelp.jsp</result>
+		</action>
 		<action name="adddd" class="com.updater.action.Adddd" method="execute ">
 			<result name="success">/AddUrl.jsp</result>
 		</action>
@@ -32,7 +38,7 @@
 			<result name="error">/Failed.jsp</result>
 		</action>
 		<action name="deleteurl" class="com.updater.action.DeleteUrl" method="execute ">
-			<result name="success">/DeleteOrAddSuccess.jsp</result>
+			<result name="success">/UrlManage.jsp</result>
 			<result name="error">/Failed.jsp</result>
 		</action>
 		<action name="urldetail" class="com.updater.action.UrlDetail" method="execute ">
@@ -40,7 +46,7 @@
 			<result name="error">/Failed.jsp</result>
 		</action>
 		<action name="addurl" class="com.updater.action.AddUrl" method="execute ">
-			<result name="success">/DeleteOrAddSuccess.jsp</result>
+			<result name="success">/UrlManage.jsp</result>
 			<result name="error">/Failed.jsp</result>
 		</action>
 		<action name="changeuserinf" class="com.updater.action.ChangeUserInf" method="execute ">
@@ -48,7 +54,7 @@
 			<result name="error">/Failed.jsp</result>
 		</action>
 		<action name="changeurlinf" class="com.updater.action.ChangeUrlInf" method="execute ">
-			<result name="success">/UrlDetail.jsp</result>
+			<result name="success">/UrlManage.jsp</result>
 			<result name="error">/Failed.jsp</result>
 		</action>
 		<action name="showurltochange" class="com.updater.action.UrlDetail" method="execute ">

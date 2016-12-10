@@ -8,8 +8,7 @@
 	<link type="text/css" rel="stylesheet" href="css/login.css">
 <title>Login</title>
 </head>
-<body>
-</div>  
+<body> 
 <div class="ue-bar">
     <div class="ue-bar-warp">
         <div class="ue-bar-logo">
@@ -25,8 +24,8 @@
                 <li><a href="Help.jsp">
                     <em>HELP</em>
                 </a></li>
-                <li><a href="#">
-                    <em>CONNECT US</em>
+                <li><a href="contact.jsp">
+                    <em>Contact US</em>
                 </a></li>
             </ul>
         </div>

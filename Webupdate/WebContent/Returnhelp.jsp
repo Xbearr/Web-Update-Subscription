@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ page language="java" import="com.updater.action.ViewUrl" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <head lang="en">
@@ -19,13 +21,24 @@
 	        </div>
 	        <div class="ue-bar-nav">
 	            <ul>
-	                <li><a href="index.jsp">
-	                    <em>INDEX</em>
-	                </a></li>
-	                <li class="active"><a class="active" href="Help.jsp">
+	                <li><a href='<s:url action="returnindex">
+						<s:param name="username" value="username"/> 
+						</s:url>'>
+                    <em>INDEX</em>
+               		</a></li>
+               		<li><a href='<s:url action="viewurl">
+			        	<s:param name="username" value="username"/> 
+			            </s:url>'>
+                    <em>URLS</em>
+                	</a></li>
+                	<li class="active"><a class="active" href='<s:url action="returnhelp">
+						<s:param name="username" value="username"/> 
+						</s:url>'>
 	                    <em>HELP</em>
 	                </a></li>
-	                <li><a href="contact.jsp">
+					<li><a href='<s:url action="returncontact">
+						<s:param name="username" value="username"/> 
+						</s:url>'>
 	                    <em>Contact US</em>
 	                </a></li>
 	            </ul>
@@ -42,12 +55,10 @@
 	            -->
 	            <li class="login">
 	                <img src="http://quc.qhimg.com/dm/20_20_80/t014987b2ab2e751b14.png" class="avatar">
-	                <a class="a1" href="Login.jsp">
-	                   登录
-	                </a>
-	                <a class="a2" href="Register.jsp">
-	                   注册
-	                </a>
+	           		<a class="a1" href='<s:url action="viewuser">
+					<s:param name="username" value="username"/> 
+					</s:url>'><s:property value="username"/>  </a>
+					<a class="a2" href="index.jsp" class="current">注销</a>
 	            </li>
 	        </ul>
 	    	</nav>
