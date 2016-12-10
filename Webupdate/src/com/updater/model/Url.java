@@ -8,6 +8,7 @@ public class Url {
 	private String hash;
 	private String time;
 	private int percent;
+	private int active;
 	
 	public String getTime() {
 		return time;
@@ -63,6 +64,14 @@ public class Url {
 
 	public void setPercent(int percent) {
 		this.percent = percent;
+	}
+
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
 	}
 	
 }

@@ -63,7 +63,7 @@ class MyThread1 extends Thread {
             
             updata_trigger up=new updata_trigger();
             try {
-            	if (url.equals(null)) continue;
+            	if (!url.equals(null)) continue;
             	up.spider_trigger(url,user.getEmail());
 			} catch (Exception e) {
 				e.printStackTrace();
