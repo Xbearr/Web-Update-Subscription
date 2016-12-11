@@ -39,13 +39,13 @@
 	                <li><a href='<s:url action="returnhelp">
 						<s:param name="username" value="username"/> 
 			            </s:url>'>
-	            	<em>HELP</em>
-	            	</a></li>
-	                <li class="active"><a class="active" href='<s:url action="returncontact">
-	                	<s:param name="username" value="username"/> 
-						</s:url>'>
-	                <em>Contact US</em>
+	                    <em>HELP</em>
 	                </a></li>
+	                <li class="active"><a class="active" href='<s:url action="returncontact">
+						<s:param name="username" value="username"/> 
+							</s:url>'>
+                    <em>Contact US</em>
+                </a></li>
 	            </ul>
 	        </div>
 			

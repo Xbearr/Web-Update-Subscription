@@ -45,6 +45,7 @@
 					</s:url>'>
 	            <em>Contact US</em>
 	            </a></li>
+	        </ul>
         </div>
         <nav id="hd_nav">
         <ul>

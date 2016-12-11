@@ -16,9 +16,18 @@
 		<action name="returncontact" class="com.updater.action.Return" method="execute ">
 			<result name="success">/Returncontact.jsp</result>
 		</action>
+<<<<<<< HEAD
 		<action name="returnhelp" class="com.updater.action.Return" method="execute ">
 			<result name="success">/Returnhelp.jsp</result>
 		</action>
+=======
+<<<<<<< HEAD
+=======
+		<action name="returnhelp" class="com.updater.action.Return" method="execute ">
+			<result name="success">/Returnhelp.jsp</result>
+		</action>
+>>>>>>> 1140310317
+>>>>>>> aef75b0bb29c773a153efb068bc5230cae5d5b62
 		<action name="adddd" class="com.updater.action.Adddd" method="execute ">
 			<result name="success">/AddUrl.jsp</result>
 		</action>
