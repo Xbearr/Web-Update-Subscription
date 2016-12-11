@@ -22,23 +22,29 @@
             <ul>
                 <li><a href='<s:url action="returnindex">
 					<s:param name="username" value="username"/> 
-						</s:url>'>
-                    <em>INDEX</em>
+					</s:url>'>
+                	<em>INDEX</em>
+          		</a></li>
+               	<li class="active"><a class="active" href='<s:url action="viewurl">
+			       	<s:param name="username" value="username"/> 
+			        </s:url>'>
+                <em>URLS</em>
                 </a></li>
-                <li class="active"><a class="active" href='<s:url action="returnindex">
-						<s:param name="username" value="username"/> 
-							</s:url>'>
-                    <em>URLS</em>
+                <li><a href='<s:url action="addjob">
+			       	<s:param name="username" value="username"/> 
+			        </s:url>'>
+               	 	<em>Addjobs</em>
                 </a></li>
-                <li><a href="#">
-                    <em>HELP</em>
-                </a></li>
-                <li><a href='<s:url action="returncontact">
-						<s:param name="username" value="username"/> 
-							</s:url>'>
-                    <em>Contact US</em>
-                </a></li>
-            </ul>
+                <li><a href='<s:url action="returnhelp">
+					<s:param name="username" value="username"/> 
+					</s:url>'>
+	            <em>HELP</em>
+	            </a></li>
+				<li><a href='<s:url action="returncontact">
+					<s:param name="username" value="username"/> 
+					</s:url>'>
+	            <em>Contact US</em>
+	            </a></li>
         </div>
         <nav id="hd_nav">
         <ul>

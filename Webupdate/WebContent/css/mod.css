@@ -114,18 +114,7 @@ body, td, button, input, textarea {
     margin-bottom: 0.6em;
 }
 
-<！--container-->
-.modtab-container {
-	position: relative; /* It's important to keep this position relative and the absolute positions in this file the same */
-	width: 100%; 
-	z-index:0;
-}
-
-.modtab-container > div { 
-	display: inline; 
-}
-
-.modtab-content {
+.helpmod-faq-job {
     padding: 20px;
     background: #fff;
     border-radius: 10px;
@@ -134,4 +123,12 @@ body, td, button, input, textarea {
     margin: 0 auto;
     margin-bottom: 30px;
     padding-bottom: 10px;
+}
+
+.helpmod-faq-job p {
+	font-family:"Georgia";
+	-webkit-margin-start: 90px;
+	-webkit-margin-end: 90px;
+	font-size: 18px;
+    margin-bottom: 0.6em;
 }

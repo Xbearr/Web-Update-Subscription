@@ -33,23 +33,32 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
         </div>
         <div class="ue-bar-nav">
             <ul>
-                <li class="active"><a class="active" href='<s:url action="returnindex">
+	        	<li class="active"><a class="active" href='<s:url action="returnindex">
 					<s:param name="username" value="username"/> 
 					</s:url>'>
-                    <em>INDEX</em>
+                <em>INDEX</em>
+               	</a></li>
+               	<li><a href='<s:url action="viewurl">
+			      	<s:param name="username" value="username"/> 
+			        </s:url>'>
+                <em>URLS</em>
                 </a></li>
-                <li><a href='<s:url action="viewurl">
-			                     <s:param name="username" value="username"/> 
-			                     </s:url>'>
-                    <em>URLS</em>
+                <li><a href='<s:url action="addjob">
+			       	<s:param name="username" value="username"/> 
+			        </s:url>'>
+                <em>Addjobs</em>
                 </a></li>
-                <li><a href="#">
-                    <em>HELP</em>
-                </a></li>
-                <li><a href="#">
-                    <em>CONNECT US</em>
-                </a></li>
-            </ul>
+                <li><a href='<s:url action="returnhelp">
+					<s:param name="username" value="username"/> 
+					</s:url>'>
+	            <em>HELP</em>
+	            </a></li>
+				<li><a href='<s:url action="returncontact">
+					<s:param name="username" value="username"/> 
+					</s:url>'>
+	            <em>Contact US</em>
+	            </a></li>
+	     	</ul>
         </div>
         
         <nav id="hd_nav">
@@ -62,7 +71,7 @@ setInterval("timer.innerHTML=new Date().toLocaleString()");
             </li>
             -->
             <li class="login">
-                <img src="http://quc.qhimg.com/dm/20_20_80/t014987b2ab2e751b14.png" class="avatar">
+                <img src="http://quc.qhimg.com/dm/20_20_80/t014987b2ab2e751b14.png" class="avatar"></img>
            		<a class="a1" href='<s:url action="viewuser">
 				<s:param name="username" value="username"/> 
 				</s:url>'><s:property value="username"/>  </a>

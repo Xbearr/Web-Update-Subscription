@@ -3,9 +3,9 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Contact us!</title>
+<head lang="en">
+  	 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Frequently asked question</title>
     <link type="text/css" rel="stylesheet" href="css/navigation.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="css/mod.css"> 
@@ -31,25 +31,25 @@
 			            </s:url>'>
                     <em>URLS</em>
                 	</a></li>
-                	<li><a href='<s:url action="addjob">
+                	<li class="active"><a class="active" href='<s:url action="addjob">
 			       		<s:param name="username" value="username"/> 
-			       	 	</s:url>'>
+			        	</s:url>'>
                 	<em>Addjobs</em>
                 	</a></li>
-	                <li><a href='<s:url action="returnhelp">
+                	<li><a href='<s:url action="returnhelp">
 						<s:param name="username" value="username"/> 
-			            </s:url>'>
-	            	<em>HELP</em>
-	            	</a></li>
-	                <li class="active"><a class="active" href='<s:url action="returncontact">
-	                	<s:param name="username" value="username"/> 
 						</s:url>'>
-	                <em>Contact US</em>
+	                    <em>HELP</em>
+	                </a></li>
+					<li><a href='<s:url action="returncontact">
+						<s:param name="username" value="username"/> 
+						</s:url>'>
+	                    <em>Contact US</em>
 	                </a></li>
 	            </ul>
 	        </div>
-			
-			<nav id="hd_nav">
+	        
+	        <nav id="hd_nav">
 	        <ul>
 	           <!--
 	            <li class="skin">
@@ -66,26 +66,23 @@
 					<a class="a2" href="index.jsp" class="current">注销</a>
 	            </li>
 	        </ul>
-    		</nav>
+	    	</nav>
 	    </div>
     </div>
     
-    <!--联系方式-->
     <div class="helpmod">
-    	<h1></h1>
-        <div class="helpmod-faq">
-       		<div class="title">
-       			<p>How to contact us?</p>
-       		</div>
-       		<div class="body">
-       			<p>如果您对我们的网站建设有较好的建议、改进意见或者是使用中遇到了问题，请联系我们    ~_~</p>
-       			<p>我们的产品技术支持：</p>
-       			<p>1.邮箱：ruansheproject@163.com</p>
-       			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspoldyang95@126.com</p>
-       			<p>2.联系电话：13115509568</p>
-       			<p>3.github地址:<a href="https://github.com/Xbearr/Web-Update-Subscription"> updater</a></p>
-       		</div>
-       	</div>
-     </div>
+    	<h1>Add jobs</h1>
+    	<div class="helpmod-faq-user">
+			<form  action="addurl" method="post">
+				<p>用户名:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<s:property value="username"/></p> 
+				<p>url: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" style="font-size:20px;font-family:Tahoma;" name="url"/> </p>
+				<p>更新间隔:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" style="font-size:20px;font-family:Tahoma;" name="interval" /> </p>
+				<p>更新标准（%）: <input type="text" style="font-size:20px;font-family:Tahoma;" name="percent" /></p>
+				<input type="hidden" name="active" value="1"/>
+				<p><span style="display:block; text-align:right" ><input type="submit" style="font-size:20px;font-family:Tahoma;" value="添加"/></p>    		
+			</form>
+		</div>
+	</div>
+    
 </body>
 </html>

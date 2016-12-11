@@ -31,6 +31,11 @@
 							</s:url>'>
                     <em>URLS</em>
                 </a></li>
+                <li><a href='<s:url action="addjob">
+			       	<s:param name="username" value="username"/> 
+			        </s:url>'>
+                <em>Addjobs</em>
+                </a></li>
                 <li><a href="#">
                     <em>HELP</em>
                 </a></li>
