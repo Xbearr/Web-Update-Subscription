@@ -74,7 +74,8 @@
     	<h1>Add jobs</h1>
     	<div class="helpmod-faq-user">
 			<form  action="addurl" method="post">
-				<p>用户名:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<s:property value="username"/></p> 
+				<input type="hidden" name="username" value="<s:property value="username"/> " readonly="readonly"/>
+				<p>用户名:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<s:property value="username" /></p> 
 				<p>url: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" style="font-size:20px;font-family:Tahoma;" name="url"/> </p>
 				<p>更新间隔:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" style="font-size:20px;font-family:Tahoma;" name="interval" /> </p>
 				<p>更新标准（%）: <input type="text" style="font-size:20px;font-family:Tahoma;" name="percent" /></p>

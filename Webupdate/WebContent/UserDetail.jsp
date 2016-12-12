@@ -69,7 +69,7 @@
     	<h1>Account-Setting</h1>
         <div class="helpmod-faq-user">
         	<form  action="changeuserinf" method="post">
-        		<p></p>
+        		<p><input type="hidden" name="username" value="<s:property value="username"/> " readonly="readonly"/></p>
 				<p>Username&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp<s:property value="username"/></p>
 				<p>Account-email&nbsp&nbsp: &nbsp&nbsp&nbsp&nbsp<input type="text" style="font-size:20px;font-family:Tahoma;" name="email"  value=" <s:property value="user.email"/> "/></p>
 				<p>old password&nbsp&nbsp&nbsp&nbsp&nbsp: &nbsp&nbsp&nbsp&nbsp<input type="password" style="font-size:20px;font-family:Tahoma;" name="password"   required="required" placeholder=" 必填"/> </p>

@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link type="text/css" rel="stylesheet" href="css/style.css">
+<link type="text/css" rel="stylesheet" href="css/mod.css">
 <title>Manage Your Url</title>
 </head>
 <body>
@@ -94,7 +95,7 @@
 	<s:iterator value="Uurl" id="urls" status="ss">
 		<s:if test='#urls.active==1'>
 		<div id="c2">
-			<div class="tab-content"> <!-- tab-container > div > div in the CSS !-->
+			<div class="helpmod-faq-user"> <!-- tab-container > div > div in the CSS !-->
 				<form  action="changeurlinf" method="post">
 					用户名:<input type="text" name="username" value="<s:property value="#urls.username"/>" readonly="readonly"/> 
 					id:<input type="text" name="id" value="<s:property value="#urls.id"/>" readonly="readonly"/> 
@@ -104,46 +105,22 @@
 					<input type="submit" value="修改"/>        		
 				</form>
             </div>
-	</div>
+		</div>
 	<div id="<s:property value="#urls.id"/>">
 		<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.id"/></a> <!-- This is your actual tab and the content is below it !-->
-			<div class="tab-content">  <!-- tab-container > div > div in the CSS !-->
-						<table border="0">
-						  	<tr>
-							    <th scope="row">Id:</th>
-							    <td><B><s:property value="#urls.id"/></B></td>
-							  </tr>
-							  <tr>
-							    <th scope="row">Url:</th>
-							    <td><B><s:property value="#urls.url"/></B></td>
-							  </tr>
-							  <s:if test='#urls.active==1'>
-							  <tr><input type="button" value="Active!">
-							    <th scope="row">active:</th>
-							    <td><B><s:property value="#urls.active"/></B></td>
-							  </tr></s:if>
-							  <tr>
-							    <th scope="row">间隔:</th>
-							    <td><B><s:property value="#urls.interval"/></B></td>
-							  </tr>
-							  <tr>
-							    <th scope="row">百分比:</th>
-							    <td><B><s:property value="#urls.percent"/></B></td>
-							  </tr>
-							  <tr>
-							    <th scope="row">最近更新时间:</th>
-							    <td><B><s:property value="#urls.time"/></B></td>
-							  </tr>
-						 </table>
-						 <center>
-						 		<a href='#c2'>修改信息</a>
-						    	<a href='<s:url action="deleteurl">
+			<div class="helpmod-faq-user">  <!-- tab-container > div > div in the CSS !-->
+				<form  action="changeurlinf" method="post">
+					<s:if test='#urls.active==1'>
+						<p><input type="button"  style="font-size:20px;font-family:Tahoma;" value="rest">&nbsp&nbsp(！小心，按下后，设定的jobs会休眠)</p>
+					</s:if>
+					<p>url: <input type="text" name="url" style="font-size:20px;font-family:Tahoma;" value="<s:property value="#urls.url"/>" /> 
+					<p>更新间隔: <input type="text" name="interval"  value="<s:property value="#urls.interval"/>" /> </p>
+					<p>更新标准（%）: <input type="text" name="percent" value="<s:property value="#urls.percent"/>" /> </p>
+						<p> <a href='#c2'>修改信息</a><p>
+						<a href='<s:url action="deleteurl">
 			                     <s:param name="id" value="#urls.id"/> 
-			                     </s:url>'>删除</a>
-						</center>
-	                	<br/>
-	                	<br/>
-				
+			                     </s:url>'>删除</a>     		
+				</form>>
              </div>
 		</div>
 		</s:if>
@@ -156,7 +133,7 @@
 		<s:if test='#urls.active==0'>
 		<div id="<s:property value="#urls.id"/>">
 			<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.id"/></a> <!-- This is your actual tab and the content is below it !-->
-				<div class="tab-content">  <!-- tab-container > div > div in the CSS !-->
+				<div class="helpmod-faq-user">  <!-- tab-container > div > div in the CSS !-->
 					
 						<table border="0">
 						  	<tr>
@@ -203,19 +180,6 @@
 		</div>
 	</s:if>
 	</s:iterator>
-<div id="c1">
-		<a href="#c1" title="First">ADDURL</a> <!-- This is your actual tab and the content is below it !-->
-			<div class="tab-content">  <!-- tab-container > div > div in the CSS !-->
-			<form  action="addurl" method="post">
-				用户名:<input type="text" name="username" value="<s:property value="username"/> " readonly="readonly"/> 
-				url: <input type="text" name="url"/> 
-				更新间隔: <input type="text" name="interval" /> 
-				更新标准（%）: <input type="text" name="percent" />
-				 <input type="hidden" name="active" value="1"/>
-				<input type="submit" value="添加"/>        		
-			</form>
-             </div>
-	</div>
 <div id="c0">
 			<div class="tab-content"> <!-- Having a hidden or opening tab is ideal when you don't want last tab to always show first when loading the page !-->
             <h3>98765</h3>

@@ -40,6 +40,7 @@ public class AddUrl extends ActionSupport{
 		Date start_time = new Date();
         SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");//设置日期格式
         String s_start_time = df.format(start_time);
+        System.out.println(getUsername());
         Uurls.setActive(getActive());
 		Uurls.setUrl(getUrl());
 		Uurls.setUsername(getUsername());
