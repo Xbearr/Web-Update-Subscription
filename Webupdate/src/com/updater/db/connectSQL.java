@@ -10,7 +10,7 @@ public class connectSQL
 {
 	static String sqlurl="jdbc:mysql://localhost:3306/account?characterEncoding=utf8&useSSL=true";
 	static String user="root";
-	static String password="root";
+	static String password="";
 	static String driver="com.mysql.jdbc.Driver";
 	public Connection connect;
 	public Statement sta;

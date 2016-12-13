@@ -384,7 +384,10 @@ a:hover{
 	text-decoration: none; 
 	color: #191717; 
 	display: block;
-	font-size:12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size:15px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	text-transform:uppercase;
@@ -393,7 +396,7 @@ a:hover{
 	border: 1px solid #c4c6ca;
 	padding: 4px 14px;
 	border-radius: 5px;
-    text-shadow: 0 -1px 0 #000000;
+    
 	box-shadow: 0 4px 10px -5px #000000;
 }
 
@@ -402,9 +405,9 @@ a:hover{
 	height: 50px;
 	position: relative !important; /* Keeps the tabs in line with each other */
 	text-decoration: none; 
-	color: #808080; 
-	display: block;
 	
+	display: block;
+	color: #808080; 
 	font-size:15px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight:bold;
@@ -433,6 +436,11 @@ a:hover{
 	border-radius: 5px;
     /*text-shadow: 0 -1px 0 #000000;*/
 	box-shadow: 0 4px 10px -5px #000000;
+	
+	color: #808080; 
+	font-size:12px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:bold;
 	z-index: -2;
 	top: 3em;
 	left: 400px;
