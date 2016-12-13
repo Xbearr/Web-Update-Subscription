@@ -77,11 +77,16 @@ public class getSQL {
 				state.close();
 				//System.out.println(user.getUsername()+" "+user.getPassword());
 				//System.out.println(userlog.getUsername()+" "+userlog.getPassword());
-				if (user.getPassword().equals(userlog.getPassword())){
-					return true;
+				if(user.getPassword()!=null) {
+					if (user.getPassword().equals(userlog.getPassword())){
+						return true;
+					}
+					else
+					{
+						return false;
+					}
 				}
-				else
-				{
+				else {
 					return false;
 				}
 			} 

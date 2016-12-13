@@ -54,15 +54,14 @@ public class AddUrl extends ActionSupport{
 		getSQL down = new getSQL();
 		
 		if(down.newUrl(Uurls))
-		{	
-				setUurl(down.GetUrlByName(getUsername()));
-				return SUCCESS;
+		{
+			setUurl(down.GetUrlByName(getUsername()));
+			return SUCCESS;
 		}
 		else 
 		{
-				return ERROR;
+			return ERROR;
 		}
-
 	}
 	
 	public String getId() {

@@ -8,6 +8,8 @@
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <link type="text/css" rel="stylesheet" href="css/mod.css">
 <title>Manage Your Url</title>
+<%  int a=0;
+%>
 </head>
 <body>
 <div class="ue-bar">
@@ -34,7 +36,7 @@
                 <li><a href='<s:url action="addjob">
 			       	<s:param name="username" value="username"/> 
 			        </s:url>'>
-               	 	<em>Addjobs</em>
+               	 	<em>AddJobs</em>
                 </a></li>
                 <li><a href='<s:url action="returnhelp">
 					<s:param name="username" value="username"/> 
@@ -44,7 +46,7 @@
 				<li><a href='<s:url action="returncontact">
 					<s:param name="username" value="username"/> 
 					</s:url>'>
-	            <em>Contact US</em>
+	            <em>Contact us</em>
 	            </a></li>
 	        </ul>
         </div>
@@ -70,18 +72,8 @@
 </div>
 
 
-<center>
-<a href='<s:url action="adddd">
-			                     <s:param name="username" value="username"/> 
-			                     </s:url>'>添加url</a>
-
-	
-<a href='<s:url action="returnindex">
-<s:param name="username" value="username"/> 
-</s:url>'>返回主页</a>
-
-</center>
-
+<th></th>
+<th></th>
 <div id="container">
 
 <!-- Start Tabs !-->
@@ -89,100 +81,121 @@
 <div class="tab-container">
 
 <!-- Use c + the tab number or any other identifier you'd like when creating a new tab, just keep them in order.  You can have an unlimited number of tabs !-->
+	<!-- 激活的url -->
 	<div class="title">
 		<p>Active Jobs</p>
     </div>
 	<s:iterator value="Uurl" id="urls" status="ss">
-		<s:if test='#urls.active==1'>
-		<div id="c2">
-			<div class="helpmod-faq-user"> <!-- tab-container > div > div in the CSS !-->
-				<form  action="changeurlinf" method="post">
-					用户名:<input type="text" name="username" value="<s:property value="#urls.username"/>" readonly="readonly"/> 
-					id:<input type="text" name="id" value="<s:property value="#urls.id"/>" readonly="readonly"/> 
-					url: <input type="text" name="url" value="<s:property value="#urls.url"/>" /> 
-					更新间隔: <input type="text" name="interval"  value="<s:property value="#urls.interval"/>" /> 
-					更新标准（%）: <input type="text" name="percent" value="<s:property value="#urls.percent"/>" /> 
-					<input type="submit" value="修改"/>        		
-				</form>
-            </div>
-		</div>
+	<s:if test='#urls.active==1'>
+		<% a=1; %>
 	<div id="<s:property value="#urls.id"/>">
-		<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.id"/></a> <!-- This is your actual tab and the content is below it !-->
+		<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.url"/></a> <!-- This is your actual tab and the content is below it !-->
 			<div class="helpmod-faq-user">  <!-- tab-container > div > div in the CSS !-->
+				<form action="active" method="post">
+						<input type="hidden" name="username" value="<s:property value="#urls.username"/>" /> 
+						<input type="hidden" name="id" value="<s:property value="#urls.id"/>" />
+						<input type="hidden" name="url" value="<s:property value="#urls.url"/>" />
+						<input type="hidden" name="interval" value="<s:property value="#urls.interval"/>" />
+						<input type="hidden" name="percent" value="<s:property value="#urls.percent"/>" />
+						<input type="hidden" name="active" value="0"/>
+						<p><input type="submit"  style="font-size:20px;font-family:Tahoma;" value="rest">&nbsp&nbsp(！小心，按下后，设定的job会休眠)</p>
+				</form>
 				<form  action="changeurlinf" method="post">
-					<s:if test='#urls.active==1'>
-						<p><input type="button"  style="font-size:20px;font-family:Tahoma;" value="rest">&nbsp&nbsp(！小心，按下后，设定的jobs会休眠)</p>
-					</s:if>
-					<p>url: <input type="text" name="url" style="font-size:20px;font-family:Tahoma;" value="<s:property value="#urls.url"/>" /> 
-					<p>更新间隔: <input type="text" name="interval"  value="<s:property value="#urls.interval"/>" /> </p>
-					<p>更新标准（%）: <input type="text" name="percent" value="<s:property value="#urls.percent"/>" /> </p>
-						<p> <a href='#c2'>修改信息</a><p>
-						<a href='<s:url action="deleteurl">
-			                     <s:param name="id" value="#urls.id"/> 
-			                     </s:url>'>删除</a>     		
-				</form>>
+					<input type="hidden" name="username" value="<s:property value="#urls.username"/>" readonly="readonly"/> 
+					<input type="hidden" name="id" value="<s:property value="#urls.id"/>" readonly="readonly"/>
+					<input type="hidden" name="active" value="1"/>
+					<p>url: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="url" style="font-size:20px;font-family:Tahoma;" value="<s:property value="#urls.url"/>" /> 
+					<p>CHECK INTERVAL: 
+					<select style="font-size:20px;font-family:Tahoma;Tahoma;width:100px;" name="interval">
+						<s:if test='#urls.interval==60'><option value="60" selected="selected">1 mins</option></s:if><s:else><option value="60">1 mins</option></s:else>
+						<s:if test='#urls.interval==900'><option value="900" selected="selected">15 mins</option></s:if><s:else><option value="900">15 mins</option></s:else>
+						<s:if test='#urls.interval==1800'><option value="1800" selected="selected">30 mins</option></s:if><s:else><option value="1800">30 mins</option></s:else>
+						<s:if test='#urls.interval==3600'><option value="3600" selected="selected">1 hours</option></s:if><s:else><option value="3600">1 hours</option></s:else>
+						<s:if test='#urls.interval==7200'><option value="7200" selected="selected">2 hours</option></s:if><s:else><option value="7200">2 hours</option></s:else>
+						<s:if test='#urls.interval==14400'><option value="14400" selected="selected">4 hours</option></s:if><s:else><option value="14400">4 hours</option></s:else>
+						<s:if test='#urls.interval==21600'><option value="21600" selected="selected">6 hours</option></s:if><s:else><option value="21600">6 hours</option></s:else>
+						<s:if test='#urls.interval==43200'><option value="43200" selected="selected">12 mins</option></s:if><s:else><option value="43200">12 hours</option></s:else>
+						<s:if test='#urls.interval==86400'><option value="86400" selected="selected">1 days</option></s:if><s:else><option value="86400">1 days</option></s:else>
+						</select></p> 
+					<p>EMAIL-TRIGGER&nbsp&nbsp&nbsp: 
+					<select style="font-size:20px;font-family:Tahoma;Tahoma;width:100px;" name="percent">
+						<s:if test='#urls.percent==1'><option value="1" selected="selected">Tiny</option></s:if><s:else><option value="1">Tiny</option></s:else>
+						<s:if test='#urls.percent==2'><option value="2" selected="selected">Normal</option></s:if><s:else><option value="2">Normal</option></s:else>
+						<s:if test='#urls.percent==3'><option value="3" selected="selected">Major</option></s:if><s:else><option value="3">Major</option></s:else>
+						</select></p> 
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="submit" value="确认修改"/></p>	
+				</form>
              </div>
 		</div>
 		</s:if>
 	</s:iterator>
-
+	<% if (a==0) { %>
+		<h></h>
+	<%}%>
+	<s:if test='ttt==0'>
+		<h></h>
+	</s:if>
+	<!-- 非激活的url -->
 	<div class="title">
 		<p>Inactive Jobs</p>
     </div>
 	<s:iterator value="Uurl" id="urls" status="ss">
 		<s:if test='#urls.active==0'>
 		<div id="<s:property value="#urls.id"/>">
-			<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.id"/></a> <!-- This is your actual tab and the content is below it !-->
+			<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.url"/></a> <!-- This is your actual tab and the content is below it !-->
 				<div class="helpmod-faq-user">  <!-- tab-container > div > div in the CSS !-->
-					
-						<table border="0">
-						  	<tr>
-							    <th scope="row">Id:</th>
-							    <td><B><s:property value="#urls.id"/></B></td>
-							  </tr>
-							  <tr>
-							    <th scope="row">Url:</th>
-							    <td><B><s:property value="#urls.url"/></B></td>
-							  </tr>
-							  <tr>
-							  <s:if test='#urls.active==1'>
-							  <tr><input type="button" value="Active!">
-							    <th scope="row">active:</th>
-							    <td><B><s:property value="#urls.active"/></B></td>
-							  </tr></s:if>
-							  <tr>
-							    <th scope="row">active:</th>
-							    <td><B><s:property value="#urls.active"/></B></td>
-							  </tr>
-							  <tr>
-							    <th scope="row">间隔:</th>
-							    <td><B><s:property value="#urls.interval"/></B></td>
-							  </tr>
-							  <tr>
-							    <th scope="row">百分比:</th>
-							    <td><B><s:property value="#urls.percent"/></B></td>
-							  </tr>
-							  <tr>
-							    <th scope="row">最近更新时间:</th>
-							    <td><B><s:property value="#urls.time"/></B></td>
-							  </tr>
-						 </table>
-						 <center>
-						 		<a href='#c2'>修改信息</a>
-						    	<a href='<s:url action="deleteurl">
+				<form  action="changeurlinf" method="post">
+					<form action="active" method="post">
+						<input type="hidden" name="username" value="<s:property value="#urls.username"/>" /> 
+						<input type="hidden" name="id" value="<s:property value="#urls.id"/>" />
+						<input type="hidden" name="url" value="<s:property value="#urls.url"/>" />
+						<input type="hidden" name="interval" value="<s:property value="#urls.interval"/>" />
+						<input type="hidden" name="percent" value="<s:property value="#urls.percent"/>" />
+						<input type="hidden" name="active" value="1"/>
+						<p><input type="submit"  style="font-size:20px;font-family:Tahoma;" value="Active"></p>
+					</form>
+					<input type="hidden" name="username" value="<s:property value="#urls.username"/>" readonly="readonly"/> 
+					<input type="hidden" name="id" value="<s:property value="#urls.id"/>" readonly="readonly"/>
+					<input type="hidden" name="active" value="0"/>
+					<p>url: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="url" style="font-size:20px;font-family:Tahoma;" value="<s:property value="#urls.url"/>" /> 
+					<p>CHECK INTERVAL: 
+					<select style="font-size:20px;font-family:Tahoma;Tahoma;width:100px;" name="interval">
+						<s:if test='#urls.interval==60'><option value="60" selected="selected">1 mins</option></s:if><s:else><option value="60">1 mins</option></s:else>
+						<s:if test='#urls.interval==900'><option value="900" selected="selected">15 mins</option></s:if><s:else><option value="900">15 mins</option></s:else>
+						<s:if test='#urls.interval==1800'><option value="1800" selected="selected">30 mins</option></s:if><s:else><option value="1800">30 mins</option></s:else>
+						<s:if test='#urls.interval==3600'><option value="3600" selected="selected">1 hours</option></s:if><s:else><option value="3600">1 hours</option></s:else>
+						<s:if test='#urls.interval==7200'><option value="7200" selected="selected">2 hours</option></s:if><s:else><option value="7200">2 hours</option></s:else>
+						<s:if test='#urls.interval==14400'><option value="14400" selected="selected">4 hours</option></s:if><s:else><option value="14400">4 hours</option></s:else>
+						<s:if test='#urls.interval==21600'><option value="21600" selected="selected">6 hours</option></s:if><s:else><option value="21600">6 hours</option></s:else>
+						<s:if test='#urls.interval==43200'><option value="43200" selected="selected">12 mins</option></s:if><s:else><option value="43200">12 hours</option></s:else>
+						<s:if test='#urls.interval==86400'><option value="86400" selected="selected">1 days</option></s:if><s:else><option value="86400">1 days</option></s:else>
+						</select></p> 
+					<p>EMAIL-TRIGGER&nbsp&nbsp&nbsp: 
+					<select style="font-size:20px;font-family:Tahoma;Tahoma;width:100px;" name="percent">
+						<s:if test='#urls.percent==1'><option value="1" selected="selected">Tiny</option></s:if><s:else><option value="1">Tiny</option></s:else>
+						<s:if test='#urls.percent==2'><option value="2" selected="selected">Normal</option></s:if><s:else><option value="2">Normal</option></s:else>
+						<s:if test='#urls.percent==3'><option value="3" selected="selected">Major</option></s:if><s:else><option value="3">Major</option></s:else>
+						</select></p>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="submit" value="确认修改"/></p>    
+					<p><a href='<s:url action="deleteurl">
 			                     <s:param name="id" value="#urls.id"/> 
-			                     </s:url>'>删除</a>
-						</center>
-	                	<br/>
-	                	<br/>
-				
+			                     </s:url>'>删除!</a></p>		
+				</form>
              </div>
 		</div>
 	</s:if>
 	</s:iterator>
-<div id="c0">
+	
+	<!-- 当做挡板 -->
+	<div id="c0">
 			<div class="tab-content"> <!-- Having a hidden or opening tab is ideal when you don't want last tab to always show first when loading the page !-->
-            <h3>98765</h3>
+            <h3></h3>
             </div>
 	</div>
 </div><!-- Tab Container !-->

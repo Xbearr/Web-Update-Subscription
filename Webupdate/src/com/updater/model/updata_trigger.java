@@ -82,7 +82,7 @@ public class updata_trigger {
 		
 		if ( difftime(url)==1) {
 			if(trigger(url)==1){
-				send_email.send_mail(email,url.getUrl());
+				send_email.send_mail(email,url.getUrl(),1);
 			}
 			else return;
 		}

@@ -19,7 +19,7 @@ form{
     display: block;	/* 块元素*/
 }
 a{
-    color: #ffffff;
+    color: #000000;
     text-decoration: none; /* 下划线*/
     outline: none;
 }
@@ -397,6 +397,27 @@ a:hover{
 	box-shadow: 0 4px 10px -5px #000000;
 }
 
+.tab-container h {
+	width: 360px;
+	height: 50px;
+	position: relative !important; /* Keeps the tabs in line with each other */
+	text-decoration: none; 
+	color: #808080; 
+	display: block;
+	
+	font-size:15px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+	margin:4px;
+	background: #f9f9f9;
+	border: 1px solid #c4c6ca;
+	padding: 4px 14px;
+	border-radius: 5px;
+    text-shadow: 0 -1px 0 #000000;
+	box-shadow: 0 4px 10px -5px #000000;
+}
+
 .tab-container > div:not(:target) > a {
 }	
 
@@ -419,7 +440,8 @@ a:hover{
 	padding: 20px;
 	min-height:250px; /* Change this value if you need more or less content space */
 	position:absolute; /* Fixes IE 7 & 8 */
-}	
+}
+
 .tab-container > div:not(:target) > div { 
 	position: absolute; /* This keeps the tab module contained */
 }

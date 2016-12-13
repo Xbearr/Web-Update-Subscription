@@ -34,7 +34,7 @@
                 	<li class="active"><a class="active" href='<s:url action="addjob">
 			       		<s:param name="username" value="username"/> 
 			        	</s:url>'>
-                	<em>Addjobs</em>
+                	<em>AddJobs</em>
                 	</a></li>
                 	<li><a href='<s:url action="returnhelp">
 						<s:param name="username" value="username"/> 
@@ -44,7 +44,7 @@
 					<li><a href='<s:url action="returncontact">
 						<s:param name="username" value="username"/> 
 						</s:url>'>
-	                    <em>Contact US</em>
+	                    <em>Contact us</em>
 	                </a></li>
 	            </ul>
 	        </div>
@@ -72,13 +72,27 @@
     
     <div class="helpmod">
     	<h1>Add jobs</h1>
-    	<div class="helpmod-faq-user">
+    	<div class="helpmod-faq-addjobs">
 			<form  action="addurl" method="post">
 				<input type="hidden" name="username" value="<s:property value="username"/> " readonly="readonly"/>
-				<p>用户名:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<s:property value="username" /></p> 
-				<p>url: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" style="font-size:20px;font-family:Tahoma;" name="url"/> </p>
-				<p>更新间隔:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" style="font-size:20px;font-family:Tahoma;" name="interval" /> </p>
-				<p>更新标准（%）: <input type="text" style="font-size:20px;font-family:Tahoma;" name="percent" /></p>
+				<p>用户名&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<s:property value="username" /></p> 
+				<p>url&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" style="font-size:20px;font-family:Tahoma;" required="required" name="url"/> </p>
+				<p>CHECK INTERVAL&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <select style="font-size:20px;font-family:Tahoma;Tahoma;width:100px;" name="interval">
+																			<option value="900">15 mins</option>
+																			<option value="1800">30 mins</option>
+																			<option value="60" selected="selected">1 mins</option>
+																			<option value="3600">1 hours</option>
+																			<option value="7200">2 hours</option>
+																			<option value="14400">4 hours</option>
+																			<option value="21600">6 hours</option>
+																			<option value="43200">12 hours</option>
+																			<option value="86400">1 days</option>
+																			</select></p>
+				<p>EMAIL-TRIGGER&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp <select style="font-size:20px;font-family:Tahoma;width:100px;" name="percent">
+																			<option value="1" selected="selected">Tiny</option>
+																			<option value="2">Normal</option>
+																			<option value="3">Major</option>
+																			</select></p>
 				<input type="hidden" name="active" value="1"/>
 				<p><span style="display:block; text-align:right" ><input type="submit" style="font-size:20px;font-family:Tahoma;" value="添加"/></p>    		
 			</form>

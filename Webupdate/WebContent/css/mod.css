@@ -95,6 +95,22 @@ body, td, button, input, textarea {
     padding-bottom: 10px;
 }
 
+.helpmod-faq-password {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+.helpmod-faq-password p {
+	font-family:"Georgia";
+	-webkit-margin-end: 90px;
+	font-size: 18px;
+    margin-bottom: 0.6em;
+}
 .helpmod-faq-user {
     padding: 20px;
     background: #fff;
@@ -110,6 +126,14 @@ body, td, button, input, textarea {
 	font-family:"Georgia";
 	-webkit-margin-start: 90px;
 	-webkit-margin-end: 90px;
+	font-size: 18px;
+    margin-bottom: 0.6em;
+}
+
+.helpmod-faq-user a {
+	font-family:"Georgia";
+	-webkit-margin-start: 280px;
+	-webkit-margin-end: 10px;
 	font-size: 18px;
     margin-bottom: 0.6em;
 }
@@ -132,3 +156,23 @@ body, td, button, input, textarea {
 	font-size: 18px;
     margin-bottom: 0.6em;
 }
+
+.helpmod-faq-addjobs {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.helpmod-faq-addjobs p {
+	font-family:"Georgia";
+	-webkit-margin-start: 50px;
+	-webkit-margin-end: 90px;
+	font-size: 18px;
+    margin-bottom: 0.6em;
+}
+

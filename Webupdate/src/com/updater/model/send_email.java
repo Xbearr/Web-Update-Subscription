@@ -24,7 +24,7 @@ public class send_email {
 	public static String Emailpassword="mgqemrodypdvbdja";
 	public static String myEmailSMTPHost = "smtp.qq.com";
 	
-	public static void send_mail(String receiveMailAccount,String url) throws Exception {
+	public static void send_mail(String receiveMailAccount,String object,int a) throws Exception {
         //创建参数配置, 用于连接邮件服务器的参数配置
         Properties props = new Properties();                    // 参数配置
         props.put("mail.smtp.host", "host");
@@ -43,7 +43,7 @@ public class send_email {
         session.setDebug(true);                                 // 设置为debug模式, 可以查看详细的发送 log
 
         //创建一封邮件
-        MimeMessage message = createMimeMessage(session,Emailaccout, receiveMailAccount,url);
+        MimeMessage message = createMimeMessage(session,Emailaccout, receiveMailAccount,object);
 
         // 根据 Session 获取邮件传输对象
         Transport transport = session.getTransport();

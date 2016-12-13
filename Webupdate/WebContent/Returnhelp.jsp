@@ -34,7 +34,7 @@
                 	<li><a href='<s:url action="addjob">
 			       		<s:param name="username" value="username"/> 
 			        	</s:url>'>
-               	 	<em>Addjobs</em>
+               	 	<em>AddJobs</em>
                 	</a></li>
                 	<li class="active"><a class="active" href='<s:url action="returnhelp">
 						<s:param name="username" value="username"/> 
@@ -44,7 +44,7 @@
 					<li><a href='<s:url action="returncontact">
 						<s:param name="username" value="username"/> 
 						</s:url>'>
-	                    <em>Contact US</em>
+	                    <em>Contact us</em>
 	                </a></li>
 	            </ul>
 	        </div>

@@ -49,7 +49,7 @@ form:after {
 	width: 400px;
 }
 #content h1 {
-	color: #7E7E7E;
+	color: #145172;
 	font: bold 25px Helvetica, Arial, sans-serif;
 	letter-spacing: -0.05em;
 	line-height: 20px;
@@ -80,6 +80,18 @@ form:after {
 	background: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
     left: 0;
+}
+#content p {
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );
+	-webkit-margin-start: 70px;
+	-webkit-margin-end: 70px;
+	font-size: 16px;
+    margin-bottom: 0.6em;
+    color:#ac9b85;
+}
+#content a {
+	color:#0762a5;
+	float:right;
 }
 #content:after,
 #content:before {

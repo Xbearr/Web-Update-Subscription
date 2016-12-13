@@ -3,6 +3,7 @@ package com.updater.action;
 import com.updater.model.User;
 import com.opensymphony.xwork2.ActionSupport;
 import com.updater.db.getSQL;
+import com.updater.model.send_email;
 
 public class Register extends ActionSupport{
 	
@@ -24,13 +25,13 @@ public class Register extends ActionSupport{
 	
 	
 	
-	public String execute()
+	public String execute() throws Exception
 	{
 		
 		user.setUsername(getUsername());
 		user.setPassword(getPassword());
 		user.setEmail(getEmail());
-		
+		send_email.send_mail(getEmail(),"none",2);
 		getSQL down = new getSQL();
 		
 		if(down.newUser(user))
