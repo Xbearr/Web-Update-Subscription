@@ -27,7 +27,7 @@
 		</action>
 		<action name="register" class="com.updater.action.Register" method="execute ">
 			<result name="success">/UserIndex.jsp</result>
-			<result name="error">/LoginFailed.jsp</result>
+			<result name="error">/Registerfailed.jsp</result>
 		</action>
 		<action name="login" class="com.updater.action.Login" method="execute ">
 			<result name="success">/UserIndex.jsp</result>

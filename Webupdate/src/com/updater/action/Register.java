@@ -31,17 +31,16 @@ public class Register extends ActionSupport{
 		user.setUsername(getUsername());
 		user.setPassword(getPassword());
 		user.setEmail(getEmail());
-		send_email.send_mail(getEmail(),"http://www.baidu.com",1);
+		send_email.send_mail(getEmail(),getUsername(),1);
 		getSQL down = new getSQL();
 		
 		if(down.newUser(user))
 		{
-				
-				return SUCCESS;
+			return SUCCESS;
 		}
 		else 
 		{
-				return ERROR;
+			return ERROR;
 		}
 	}
 	

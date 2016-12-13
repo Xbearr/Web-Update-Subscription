@@ -8,7 +8,7 @@
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <link type="text/css" rel="stylesheet" href="css/mod.css">
 <title>Manage Your Url</title>
-<%  int a=0;
+<%  int a=0;int b=0;
 %>
 </head>
 <body>
@@ -89,7 +89,7 @@
 	<s:if test='#urls.active==1'>
 		<% a=1; %>
 	<div id="<s:property value="#urls.id"/>">
-		<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.url"/></a> <!-- This is your actual tab and the content is below it !-->
+		<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.url.substring(0,40)"/></a> <!-- This is your actual tab and the content is below it !-->
 			<div class="helpmod-faq-user">  <!-- tab-container > div > div in the CSS !-->
 				<form action="active" method="post">
 						<input type="hidden" name="username" value="<s:property value="#urls.username"/>" /> 
@@ -116,7 +116,7 @@
 						<s:if test='#urls.interval==21600'><option value="21600" selected="selected">6 hours</option></s:if><s:else><option value="21600">6 hours</option></s:else>
 						<s:if test='#urls.interval==43200'><option value="43200" selected="selected">12 mins</option></s:if><s:else><option value="43200">12 hours</option></s:else>
 						<s:if test='#urls.interval==86400'><option value="86400" selected="selected">1 days</option></s:if><s:else><option value="86400">1 days</option></s:else>
-						</select></p> 
+						</select></p>
 					<p>EMAIL-TRIGGER&nbsp&nbsp&nbsp: 
 					<select style="font-size:20px;font-family:Tahoma;Tahoma;width:100px;" name="percent">
 						<s:if test='#urls.percent==1'><option value="1" selected="selected">Tiny</option></s:if><s:else><option value="1">Tiny</option></s:else>
@@ -144,8 +144,9 @@
     </div>
 	<s:iterator value="Uurl" id="urls" status="ss">
 		<s:if test='#urls.active==0'>
+		<% b=1; %>
 		<div id="<s:property value="#urls.id"/>">
-			<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.url"/></a> <!-- This is your actual tab and the content is below it !-->
+			<a href="#<s:property value="#urls.id"/>" ><s:property value="#urls.url.substring(0,40)"/></a> <!-- This is your actual tab and the content is below it !-->
 				<div class="helpmod-faq-user">  <!-- tab-container > div > div in the CSS !-->
 				<form  action="changeurlinf" method="post">
 					<form action="active" method="post">
@@ -191,7 +192,9 @@
 		</div>
 	</s:if>
 	</s:iterator>
-	
+	<% if (b==0) { %>
+		<h></h>
+	<%}%>
 	<!-- 当做挡板 -->
 	<div id="c0">
 			<div class="tab-content"> <!-- Having a hidden or opening tab is ideal when you don't want last tab to always show first when loading the page !-->
