@@ -83,7 +83,7 @@
 <!-- Use c + the tab number or any other identifier you'd like when creating a new tab, just keep them in order.  You can have an unlimited number of tabs !-->
 	<!-- 激活的url -->
 	<div class="title">
-		<p>Active Jobs</p>
+		<p>Active Jobs &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJob Detail</p>
     </div>
 	<s:iterator value="Uurl" id="urls" status="ss">
 	<s:if test='#urls.active==1'>
@@ -194,9 +194,26 @@
 	
 	<!-- 当做挡板 -->
 	<div id="c0">
-			<div class="tab-content"> <!-- Having a hidden or opening tab is ideal when you don't want last tab to always show first when loading the page !-->
-            <h3></h3>
-            </div>
+			 <!-- Having a hidden or opening tab is ideal when you don't want last tab to always show first when loading the page !-->
+            	<div class="helpmod-faq-user">
+            	<p>&nbsp</p>
+            	<form  action="changeurlinf" method="post">
+					<input type="hidden" name="username"  readonly="readonly"/> 
+					<input type="hidden" name="id"  readonly="readonly"/>
+					<input type="hidden" name="active" value="1"/>
+					<p>url: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="url" style="font-size:20px;font-family:Tahoma;" value="<s:property value="#urls.url"/>" /> 
+					<p>CHECK INTERVAL: 
+					<select style="font-size:20px;font-family:Tahoma;Tahoma;width:100px;" name="interval">
+						<option value="60" selected="selected">----</option>
+						</select></p> 
+					<p>EMAIL-TRIGGER&nbsp&nbsp&nbsp: 
+					<select style="font-size:20px;font-family:Tahoma;Tahoma;width:100px;" name="percent">
+						<option value="1" selected="selected">----</option>
+						</select></p> 
+				
+				</form>
+            	</div>
+            
 	</div>
 </div><!-- Tab Container !-->
 
