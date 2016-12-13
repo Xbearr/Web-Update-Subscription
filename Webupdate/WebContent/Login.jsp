@@ -75,6 +75,7 @@
 			<div>
 				<input type="password" placeholder="password" required="required"  name="password" id="password" />
 			</div>
+			<a href = "" style = "padding:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘记密码？</a>
 			<div>
 				<input type="submit"  value="Log in" />
 				<a href="Register.jsp">Register</a>

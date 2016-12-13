@@ -41,10 +41,17 @@ public class send_email {
 
         Session session = Session.getDefaultInstance(props);
         session.setDebug(true);                                 // 设置为debug模式, 可以查看详细的发送 log
-
+        
+        MimeMessage message;
         //创建一封邮件
-        MimeMessage message = createMimeMessage(session,Emailaccout, receiveMailAccount,object);
-
+        if(a==0){
+        	message = createMimeMessage0(session,Emailaccout, receiveMailAccount,object);
+        }else if(a==1){
+        	message = createMimeMessage1(session,Emailaccout, receiveMailAccount,object);
+        }else {
+        	message = createMimeMessage2(session,Emailaccout, receiveMailAccount,object);
+        }
+        
         // 根据 Session 获取邮件传输对象
         Transport transport = session.getTransport();
 
@@ -52,14 +59,15 @@ public class send_email {
         transport.connect(myEmailSMTPHost,Emailaccout,Emailpassword);
         //发送邮件, 发到所有的收件地址, message.getAllRecipients() 获取到的是在创建邮件对象时添加的所有收件人, 抄送人, 密送人
         try{
-        transport.sendMessage(message, message.getAllRecipients());
+        	transport.sendMessage(message, message.getAllRecipients());
         }catch(MessagingException ex){
         	ex.printStackTrace();
         }
         transport.close();
     }
-
-    public static MimeMessage createMimeMessage(Session session, String sendMail, String receiveMail,String url) throws Exception {
+	
+	//findpassword
+    public static MimeMessage createMimeMessage0(Session session, String sendMail, String receiveMail,String pw) throws Exception {
 
         MimeMessage message = new MimeMessage(session);
 
@@ -67,12 +75,12 @@ public class send_email {
         //收件人可以为多个
         message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail));
         
-        message.setSubject("欢迎蛤蛤","UTF-8");
+        message.setSubject("Your password is almost get reback!","UTF-8");
         message.addHeader("Disposition-Notification-To","1");
         //message.setText("这是一封自己写程序发的邮件，如果你收到了，请不要回复！无意冒犯！");
         Multipart mainPart = new MimeMultipart();
         BodyPart html = new MimeBodyPart();
-        html.setContent(url+"这个世界啊，还是亦可赛艇啊！", "text/html; charset=utf-8");
+        html.setContent("  亲爱的用户，您的密码已经找回，请记住你的密码，不要丢失;您的当前密码为:"+pw+";  感谢您对我们的软件的使用，再见", "text/html; charset=utf-8");
         mainPart.addBodyPart(html);
         message.setContent(mainPart);
         message.setSentDate(new Date());
@@ -80,5 +88,48 @@ public class send_email {
 
         return message;
     }
+    
+    //register
+    public static MimeMessage createMimeMessage1(Session session, String sendMail, String receiveMail,String username) throws Exception {
+        MimeMessage message = new MimeMessage(session);
 
+        message.setFrom(new InternetAddress(sendMail));
+        //收件人可以为多个
+        message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail));
+        
+        message.setSubject("欢迎注册updater，感谢您的使用","UTF-8");
+        message.addHeader("Disposition-Notification-To","1");
+        //message.setText("这是一封自己写程序发的邮件，如果你收到了，请不要回复！无意冒犯！");
+        Multipart mainPart = new MimeMultipart();
+        BodyPart html = new MimeBodyPart();
+        html.setContent("  亲爱的用户"+username+",欢迎使用我们的软件。这封邮件是为了确认您所注册的邮箱是您本人在使用。不用回复，谢谢", "text/html; charset=utf-8");
+        mainPart.addBodyPart(html);
+        message.setContent(mainPart);
+        message.setSentDate(new Date());
+        message.saveChanges();
+
+        return message;
+    }
+    
+    //trigger-email
+    public static MimeMessage createMimeMessage2(Session session, String sendMail, String receiveMail,String url) throws Exception {
+        MimeMessage message = new MimeMessage(session);
+
+        message.setFrom(new InternetAddress(sendMail));
+        //收件人可以为多个
+        message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail));
+        
+        message.setSubject("您所订阅的网站已更新","UTF-8");
+        message.addHeader("Disposition-Notification-To","1");
+        //message.setText("这是一封自己写程序发的邮件，如果你收到了，请不要回复！无意冒犯！");
+        Multipart mainPart = new MimeMultipart();
+        BodyPart html = new MimeBodyPart();
+        html.setContent("  亲爱的用户，您所订阅的网站"+url+" 已经有了更新，快去查看吧", "text/html; charset=utf-8");
+        mainPart.addBodyPart(html);
+        message.setContent(mainPart);
+        message.setSentDate(new Date());
+        message.saveChanges();
+
+        return message;
+    }
 }

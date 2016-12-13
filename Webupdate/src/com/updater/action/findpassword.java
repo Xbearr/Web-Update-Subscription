@@ -20,7 +20,7 @@ public class findpassword extends ActionSupport{
 			
 			if(user.getEmail().equals(getEmail())) {
 				String password=user.getPassword();
-				send_email.send_mail(user.getEmail(), password, 0);
+				send_email.send_mail(user.getEmail(),password, 0);
 				return SUCCESS;
 			}
 			else{

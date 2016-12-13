@@ -78,7 +78,7 @@
 			<a href = "" style = "padding:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘记密码？</a>
 			<p></p>
 			<p></p>
-			<p>账号或密码有误。请修改</p>
+			<p>账号或密码有误。请重新登录</p>
 			<div>
 				<input type="submit"  value="Log in" />
 				<a href="Register.jsp">Register</a>
